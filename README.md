@@ -1,1 +1,2 @@
-# dev_on_aws
+# Developing on AWS トレーニング
+## サンプル用リポジトリ
