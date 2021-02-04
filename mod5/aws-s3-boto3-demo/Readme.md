@@ -1,4 +1,4 @@
-## AWS SDKでS3を操作するサンプル
+## AWS SDKでS3を操作するサンプル (Python)
 - demo00-list-bucket.py
   - バケットの一覧表示
 - demo01-list-bucket.py

@@ -1,6 +1,6 @@
 # Copyright 2020 Amazon Web Services, Inc. or its affiliates. All rights reserved.
 '''
-  実行コンテキストの再利用のサンプル
+  螳溯｡後さ繝ｳ繝�繧ｭ繧ｹ繝医�ｮ蜀榊茜逕ｨ縺ｮ繧ｵ繝ｳ繝励Ν
 '''
 from datetime import datetime
 
