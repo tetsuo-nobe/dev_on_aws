@@ -7,7 +7,7 @@ phases:
     commands:
       - npm install time
       - export BUCKET=tnobe-demo-sam-cicd
-      - aws cloudformation package --template-file template.yaml --s3-bucket $BUCKET --output-template-file outputtemplate.yaml
+      - sam package --template-file template.yaml --s3-bucket $BUCKET --output-template-file outputtemplate.yaml
 artifacts:
   files:
     - template.yaml
