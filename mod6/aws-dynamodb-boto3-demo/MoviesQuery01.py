@@ -2,6 +2,7 @@
 '''
   Query 
   (テーブルの検索。パーティションキーの等価条件だけ指定するケース)
+  このサンプルでは、year=1985の項目を抽出
 '''
 import boto3
 from boto3.dynamodb.conditions import Key

@@ -4,6 +4,7 @@
   (テーブルのスキャン。
    Scanは常にテーブルから全項目を取出す。
    FilterExpressionがあればそこで指定した項目をピックアップして返す)
+   このサンプルでは、yearが1950から1959まで項目をピックアップ
 '''
 from pprint import pprint
 import boto3

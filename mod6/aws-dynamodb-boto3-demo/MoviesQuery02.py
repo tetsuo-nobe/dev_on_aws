@@ -2,6 +2,7 @@
 '''
   Query 
   (テーブルの検索。パーティションキーの等価条件とソートキーの値の範囲を指定するケース)
+  このサンプルでは、year=1992, titleが、A* から Lまで(L*は範囲外)の項目を抽出 
 '''
 from pprint import pprint
 import boto3
