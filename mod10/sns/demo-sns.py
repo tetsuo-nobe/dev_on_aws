@@ -2,7 +2,7 @@
 '''
   AWS SDK for Python (boto3)で SNSの基本的な操作を行うサンプル
   SNS Topic作成、Lambda関数のサブスクリプション設定、フィルターポリシー設定、メッセージ発行
-  (Lambda関数側に、SNS Topicからのinvokeを許可するのリソースベースのポリシーを事前に設定済)
+  (Lambda関数側に、SNS Topicからのinvokeを許可するリソースベースのポリシーを事前に設定済)
 '''
 import boto3
 import json
