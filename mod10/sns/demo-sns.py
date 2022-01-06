@@ -17,7 +17,7 @@ if __name__ == '__main__':
     topic = sns.create_topic(Name=topic_name)
 
     # サブスクライブの設定 (SQSやLambdaの場合は、SQSやLambda側にリソースベースのポリシーでSNSからのアクセスの許可が必要)
-    lambda_subscription  = topic.subscribe(Protocol='lambda',Endpoint='arn:aws:lambda:ap-northeast-1:068048081706:function:SNSSDKFunction')
+    lambda_subscription  = topic.subscribe(Protocol='lambda',Endpoint='arn:aws:lambda:ap-northeast-1:000000000000:function:SNSSDKFunction')
     # フィルターポリシー設定 (メッセージ属性で、"event_type"が"product_page_visited"のものを対象とする)
     lambda_subscription.set_attributes(
          AttributeName='FilterPolicy',
