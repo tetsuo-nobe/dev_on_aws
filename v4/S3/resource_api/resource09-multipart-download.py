@@ -1,46 +1,46 @@
 # Copyright 2022 Amazon Web Services, Inc. or its affiliates. All rights reserved.
 '''
-  マルチパートアップロード
+  マルチパートダウンロード
 '''
 import boto3
 import time
 from boto3.s3.transfer import TransferConfig
 from botocore.exceptions import NoCredentialsError,ClientError
 
-def multipart_upload_by_upload_file():
+def multipart_download_by_download_file():
     bucket =  "tnobe-s3-sample"                   # S3バケット指定
-    file_path= "C:\\temp\\Big-r1.zip"             # アップロードするオブジェクトのファイルパスを指定
-    key = "Big-r1.zip"                               # アップロードするオブジェクトのキーを指定
+    file_path= "C:\\temp\\Big-r1-downloaded.zip"  # ダウンロードするオブジェクトのファイルパスを指定
+    key = "Big-r1.zip"                            # ダウンロードするオブジェクトのキーを指定
     MB = 1024 ** 2
     config = TransferConfig(multipart_threshold=100*MB, multipart_chunksize=10*MB)
     #
     s3 = boto3.resource('s3')                 # S3リソース取得
     bucket = s3.Bucket("tnobe-s3-sample")     # S3バケット取得
     start = time.time()
-    bucket.upload_file(file_path, key, Config=config)        # アップロード実行
+    bucket.download_file(key, file_path, Config=config)        # ダウンロード実行
     elapsed_time = time.time() - start
-    print ("s3resource upload_file : elapsed_time:{0}".format(elapsed_time) + "[sec]")
+    print ("s3resource download_file : elapsed_time:{0}".format(elapsed_time) + "[sec]")
 
-def multipart_upload_by_upload_fileobj():
-    bucket =  "tnobe-s3-sample"                   # S3バケット指定
-    file_path= "C:\\temp\\Big-r2.zip"             # アップロードするオブジェクトのファイルパスを指定
-    key = "Big-r2.zip"                             # アップロードするオブジェクトのキーを指定
+def multipart_download_by_download_fileobj():
+    bucket =  "tnobe-s3-sample"                    # S3バケット指定
+    file_path= "C:\\temp\\Big-r2-downloaded.zip"   # ダウンロードするオブジェクトのファイルパスを指定
+    key = "Big-r2.zip"                             # ダウンロードするオブジェクトのキーを指定
     #
     s3 = boto3.resource('s3')                 # S3リソース取得
     bucket = s3.Bucket("tnobe-s3-sample")     # S3バケット取得
     start = time.time()
-    with open(file_path, 'rb') as data:
-      bucket.upload_fileobj(data, key)        # アップロード実行
+    with open(file_path, 'wb') as data:
+      bucket.download_fileobj(key,data)        # ダウンロード実行
     elapsed_time = time.time() - start
-    print ("s3resource upload_fileobj: elapsed_time:{0}".format(elapsed_time) + "[sec]")
+    print ("s3resource download_fileobj: elapsed_time:{0}".format(elapsed_time) + "[sec]")
     
 
 
 
 if __name__ == '__main__':
     try:
-        multipart_upload_by_upload_file()
-        multipart_upload_by_upload_fileobj()
+        multipart_download_by_download_file()
+        multipart_download_by_download_fileobj()
     except NoCredentialsError as nocrederr:
         print("!!!! InvalidCredentials !!!!")
         print(nocrederr)
