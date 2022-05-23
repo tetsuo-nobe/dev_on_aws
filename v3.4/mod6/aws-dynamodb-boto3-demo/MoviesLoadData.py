@@ -4,6 +4,7 @@
 '''
 import json
 import boto3
+from decimal import *
 
 
 def load_movies(movies, dynamodb=None):
