@@ -38,9 +38,16 @@
   - delete_itemをテーブルのスキャン。
     - Scanは常にテーブルから全項目を取出す。
     - FilterExpressionがあればそこで指定した項目をピックアップして返す
-
-    
-
+- Pagenaye-sample
+  - ページングしながら複数の項目を取得するサンプル
+  - pagenate-test0.py
+    - サンプル用のテーブルの作成とサンプル用の項目の作成
+  - pagenate-test1.py
+    - Scanと Limitの基本的な使い方やレスポンスを確認する
+  - pagenate-test2.py
+    - Scan実行時に Limitを指定して区切りながらに項目を取得する。
+  - testdata.json
+    - サンプル用のデータ
 
 
 
