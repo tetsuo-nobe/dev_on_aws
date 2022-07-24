@@ -9,7 +9,7 @@ from decimal import *
 
 def load_movies(movies, dynamodb=None):
     if not dynamodb:
-        dynamodb = boto3.resource('dynamodb', region_name="us-east-1")
+        dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
 
     table = dynamodb.Table('Movies')
     for movie in movies:
