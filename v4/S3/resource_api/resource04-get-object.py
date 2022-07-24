@@ -12,7 +12,7 @@ def get_object():
     obj = s3.Object(bucket,key)     # バケット名とキーを指定してオブジェクト作成
     response = obj.get()
     body = response['Body'].read()
-    output_file = open('c:\\temp\\cat_get.jpg','wb')
+    output_file = open('cat_get.jpg','wb')
     output_file.write(body)
     output_file.close()
     print('END')

@@ -9,8 +9,8 @@ from botocore.exceptions import NoCredentialsError,ClientError
 
 def multipart_download_by_download_file():
     bucket =  "tnobe-s3-sample"                   # S3バケット指定
-    file_path= "C:\\temp\\Big-r1-downloaded.zip"  # ダウンロードするオブジェクトのファイルパスを指定
-    key = "Big-r1.zip"                            # ダウンロードするオブジェクトのキーを指定
+    file_path= "AWSIcons-downloaded.zip"  # ダウンロードするオブジェクトのファイルパスを指定
+    key = "AWSIcons.zip"                            # ダウンロードするオブジェクトのキーを指定
     MB = 1024 ** 2
     config = TransferConfig(multipart_threshold=100*MB, multipart_chunksize=10*MB)
     #
@@ -23,8 +23,8 @@ def multipart_download_by_download_file():
 
 def multipart_download_by_download_fileobj():
     bucket =  "tnobe-s3-sample"                    # S3バケット指定
-    file_path= "C:\\temp\\Big-r2-downloaded.zip"   # ダウンロードするオブジェクトのファイルパスを指定
-    key = "Big-r2.zip"                             # ダウンロードするオブジェクトのキーを指定
+    file_path= "AWSIcons-downloaded2.zip"   # ダウンロードするオブジェクトのファイルパスを指定
+    key = "AWSIcons2.zip"                             # ダウンロードするオブジェクトのキーを指定
     #
     s3 = boto3.resource('s3')                 # S3リソース取得
     bucket = s3.Bucket("tnobe-s3-sample")     # S3バケット取得

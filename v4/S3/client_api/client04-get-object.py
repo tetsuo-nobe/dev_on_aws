@@ -11,7 +11,7 @@ def get_object():
     key = 'cat.jpg'                                # オブジェクトのキー(ファイル名)
     response = s3client.get_object(Bucket=bucket,Key=key)     # バケット名とキーを指定してオブジェクト作成
     body = response['Body'].read()
-    output_file = open('c:\\temp\\cat_get.jpg','wb')
+    output_file = open('cat_get.jpg','wb')
     output_file.write(body)
     output_file.close()
     print('END')

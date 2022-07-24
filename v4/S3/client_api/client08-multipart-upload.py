@@ -10,8 +10,8 @@ from botocore.exceptions import NoCredentialsError,ClientError
 def multipart_upload_by_upload_file():
     s3client = boto3.client('s3')                 # S3クライアント取得
     bucket =  "tnobe-s3-sample-client"            # S3バケット指定
-    file_path= "C:\\temp\\Big-c1.zip"             # アップロードするオブジェクトのファイルパスを指定
-    key = "Big-c1.zip"                            # アップロードするオブジェクトのキーを指定
+    file_path= "AWSIcons.zip"             # アップロードするオブジェクトのファイルパスを指定
+    key = "AWSIcons.zip"                            # アップロードするオブジェクトのキーを指定
     MB = 1024 ** 2
     config = TransferConfig(multipart_threshold=100*MB, multipart_chunksize=10*MB)
     #
@@ -23,8 +23,8 @@ def multipart_upload_by_upload_file():
 def multipart_upload_by_upload_fileobj():
     s3client = boto3.client('s3')                 # S3クライアント取得
     bucket =  "tnobe-s3-sample-client"            # S3バケット指定
-    file_path= "C:\\temp\\Big-c2.zip"             # アップロードするオブジェクトのファイルパスを指定
-    key = "Big-c2.zip"                            # アップロードするオブジェクトのキーを指定
+    file_path= "AWSIcons.zip"             # アップロードするオブジェクトのファイルパスを指定
+    key = "AWSIcons2.zip"                            # アップロードするオブジェクトのキーを指定
     #
     start = time.time()
     with open(file_path, 'rb') as data:

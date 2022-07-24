@@ -8,7 +8,7 @@ from botocore.exceptions import NoCredentialsError,ClientError
 def upload_file():
     s3client = boto3.client('s3')             # S3クライアント取得
     bucket = "tnobe-s3-sample-client"         # S3バケット名を指定
-    file_path= "C:\\temp\\Eiffel.jpg"         # アップロードするオブジェクトのファイルパスを指定
+    file_path= "Eiffel.jpg"         # アップロードするオブジェクトのファイルパスを指定
     key = "Eiffel.jpg"                        # アップロードするオブジェクトのキーを指定
     s3client.upload_file(file_path, bucket, key)
     print('File Upload: ' + file_path)
