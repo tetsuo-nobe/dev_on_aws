@@ -29,4 +29,4 @@ if __name__ == '__main__':
     movie_resp = put_movie("The Big New Movie", 2015,
                            "Nothing happens at all.", 0)
     print("Put movie succeeded:")
-    pprint(movie_resp, sort_dicts=False)
+    print(movie_resp, sort_dicts=False)
