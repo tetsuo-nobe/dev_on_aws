@@ -9,12 +9,13 @@ from pprint import pprint
 import boto3
 from botocore.exceptions import ClientError
 
+TABLE_NAME = 'Movies'
 
 def delete_underrated_movie(title, year, rating, dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb',region_name="ap-northeast-1")
 
-    table = dynamodb.Table('Movies')
+    table = dynamodb.Table(TABLE_NAME)
 
     try:
         # 条件付きでdelete_item実行
@@ -44,4 +45,5 @@ if __name__ == '__main__':
     delete_response = delete_underrated_movie("The Big New Movie", 2015, 6)
     if delete_response:
         print("Delete movie succeeded:")
-        pprint(delete_response, sort_dicts=False)
+        pprint(movie_resp)
+        # pprint(movie_resp, sort_dicts=False)  # from Python 3.8

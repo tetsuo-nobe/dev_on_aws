@@ -4,6 +4,8 @@
 '''
 import boto3
 
+TABLE_NAME = 'Movies'
+
 def delete_movie_table(dynamodb=None):
     if not dynamodb:
         #dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
@@ -11,6 +13,7 @@ def delete_movie_table(dynamodb=None):
         dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('Movies')
     table.delete()
+    dynamodb.meta.client.get_waiter('table_not_exists').wait(TableName=TABLE_NAME) # テーブル削除完了まで待機
 
 
 if __name__ == '__main__':

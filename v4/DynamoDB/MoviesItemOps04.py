@@ -7,12 +7,13 @@ from decimal import Decimal
 from pprint import pprint
 import boto3
 
+TABLE_NAME = 'Movies'
 
 def increase_rating(title, year, rating_increase, dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
 
-    table = dynamodb.Table('Movies')
+    table = dynamodb.Table(TABLE_NAME)
     # update_itemの実行
     response = table.update_item(
         Key={
@@ -31,4 +32,6 @@ def increase_rating(title, year, rating_increase, dynamodb=None):
 if __name__ == '__main__':
     update_response = increase_rating("The Big New Movie", 2015, 1)
     print("Update movie succeeded:")
-    pprint(update_response, sort_dicts=False)
+    pprint(update_response)
+    # pprint(update_response, sort_dicts=False)  # from Python 3.8
+

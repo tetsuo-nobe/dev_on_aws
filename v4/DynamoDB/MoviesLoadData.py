@@ -6,12 +6,13 @@ import json
 import boto3
 from decimal import *
 
+TABLE_NAME = 'Movies'
 
 def load_movies(movies, dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
 
-    table = dynamodb.Table('Movies')
+    table = dynamodb.Table(TABLE_NAME)
     for movie in movies:
         year = int(movie['year'])
         title = movie['title']

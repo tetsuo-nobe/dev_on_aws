@@ -9,6 +9,8 @@ from pprint import pprint
 import boto3
 from botocore.exceptions import ClientError
 
+TABLE_NAME = 'Movies'
+
 def remove_actors(title, year, actor_count, dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
@@ -43,4 +45,5 @@ if __name__ == '__main__':
     update_response = remove_actors("The Big New Movie", 2015, 3)
     if update_response:
         print("Update movie succeeded:")
-        pprint(update_response, sort_dicts=False)
+        pprint(update_response)
+        # pprint(update_response, sort_dicts=False)  # from Python 3.8

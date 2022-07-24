@@ -7,11 +7,13 @@ from decimal import Decimal
 from pprint import pprint
 import boto3
 
+TABLE_NAME = 'Movies'
+
 def update_movie(title, year, rating, plot, actors, dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
 
-    table = dynamodb.Table('Movies')
+    table = dynamodb.Table(TABLE_NAME)
     # update_itemの実行
     response = table.update_item(
         Key={
@@ -34,4 +36,5 @@ if __name__ == '__main__':
         "The Big New Movie", 2015, 5.5, "Everything happens all at once.",
         ["Larry", "Moe", "Curly"])
     print("Update movie succeeded:")
-    pprint(update_response, sort_dicts=False)
+    pprint(update_response)
+    # pprint(update_response, sort_dicts=False)  # from Python 3.8

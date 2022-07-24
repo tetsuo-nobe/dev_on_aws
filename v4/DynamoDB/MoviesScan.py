@@ -10,11 +10,13 @@ from pprint import pprint
 import boto3
 from boto3.dynamodb.conditions import Key
 
+TABLE_NAME = 'Movies'
+
 def scan_movies(year_range, display_movies, dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', region_name="us-east-1")
 
-    table = dynamodb.Table('Movies')
+    table = dynamodb.Table(TABLE_NAME)
     # scanに指定するパラメータを定義
     scan_kwargs = {
         'FilterExpression': Key('year').between(*year_range),
@@ -39,7 +41,8 @@ if __name__ == '__main__':
     def print_movies(movies):
         for movie in movies:
             print(f"\n{movie['year']} : {movie['title']}")
-            pprint(movie['info'])
+            pprint(movie)
+            # pprint(movie, sort_dicts=False)  # from Python 3.8
 
     query_range = (1950, 1959)
     print(f"Scanning for movies released from {query_range[0]} to {query_range[1]}...")

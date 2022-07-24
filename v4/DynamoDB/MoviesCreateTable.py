@@ -5,13 +5,15 @@
 '''
 import boto3
 
+TABLE_NAME = 'Movies'
+
 def create_movie_table(dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
         #dynamodb = boto3.resource('dynamodb')
     # テーブル作成
     table = dynamodb.create_table(
-        TableName='Movies',
+        TableName=TABLE_NAME,
         KeySchema=[
             {
                 'AttributeName': 'year',
@@ -38,9 +40,11 @@ def create_movie_table(dynamodb=None):
             'WriteCapacityUnits': 5
         }
     )
+    dynamodb.meta.client.get_waiter('table_exists').wait(TableName=TABLE_NAME) # テーブル作成完了まで待機
     return table
 
 
 if __name__ == '__main__':
     movie_table = create_movie_table()
     print("Table status:", movie_table.table_status)
+    

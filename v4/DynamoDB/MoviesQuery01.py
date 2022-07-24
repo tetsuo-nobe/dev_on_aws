@@ -7,11 +7,12 @@
 import boto3
 from boto3.dynamodb.conditions import Key
 
+TABLE_NAME = 'Movies'
 
 def query_movies(year, dynamodb=None):
     if not dynamodb:
-        dynamodb = boto3.resource('dynamodb', region_name="us-east-1")
-    table = dynamodb.Table('Movies')
+        dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
+    table = dynamodb.Table(TABLE_NAME)
     # Query実行
     response = table.query(
         KeyConditionExpression=Key('year').eq(year)

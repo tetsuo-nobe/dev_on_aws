@@ -8,11 +8,13 @@ from pprint import pprint
 import boto3
 from boto3.dynamodb.conditions import Key
 
+TABLE_NAME = 'Movies'
+
 def query_and_project_movies(year, title_range, dynamodb=None):
     if not dynamodb:
-        dynamodb = boto3.resource('dynamodb', region_name="us-east-1")
+        dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
 
-    table = dynamodb.Table('Movies')
+    table = dynamodb.Table(TABLE_NAME)
     print(f"Get year, title, genres, and lead actor")
 
     # Query実行
@@ -33,4 +35,5 @@ if __name__ == '__main__':
     movies = query_and_project_movies(query_year, query_range)
     for movie in movies:
         print(f"\n{movie['year']} : {movie['title']}")
-        pprint(movie['info'])
+        pprint(movie)
+        # pprint(movie, sort_dicts=False)  # from Python 3.8

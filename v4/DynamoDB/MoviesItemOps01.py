@@ -6,11 +6,12 @@
 from pprint import pprint
 import boto3
 
+TABLE_NAME = 'Movies'
 
 def put_movie(title, year, plot, rating, dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
-    table = dynamodb.Table('Movies')
+    table = dynamodb.Table(TABLE_NAME)
     # put_item実行
     response = table.put_item(
        Item={
