@@ -34,8 +34,8 @@ def create_movie_table(dynamodb=None):
 
         ],
         ProvisionedThroughput={
-            'ReadCapacityUnits': 10,
-            'WriteCapacityUnits': 10
+            'ReadCapacityUnits': 5,
+            'WriteCapacityUnits': 5
         }
     )
     return table
