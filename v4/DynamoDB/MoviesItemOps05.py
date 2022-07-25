@@ -15,7 +15,7 @@ def remove_actors(title, year, actor_count, dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
 
-    table = dynamodb.Table('Movies')
+    table = dynamodb.Table(TABLE_NAME)
 
     try:
         # 条件付きでupdate_item実行。条件を満たさない場合はClientErrorになる

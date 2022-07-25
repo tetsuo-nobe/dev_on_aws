@@ -11,7 +11,7 @@ def delete_movie_table(dynamodb=None):
         #dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
         # dynamodb = boto3.resource('dynamodb', region_name="us-west-2")
         dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('Movies')
+    table = dynamodb.Table(TABLE_NAME)
     table.delete()
     dynamodb.meta.client.get_waiter('table_not_exists').wait(TableName=TABLE_NAME) # テーブル削除完了まで待機
 
