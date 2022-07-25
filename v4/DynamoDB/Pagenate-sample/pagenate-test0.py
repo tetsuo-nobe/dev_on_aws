@@ -8,8 +8,9 @@ from decimal import *
 import json
 
 tableName = 'pagenate-test'
-loadFile  = "Pagenate-sample\\testdata.json"
+loadFile  = 'testdata.json'
 
+# テーブルを作成する関数
 def create_test_table():
     dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
     # 既存のテーブル削除
@@ -48,6 +49,7 @@ def create_test_table():
     table.wait_until_exists()
     return table
 
+# JSONファイルの内容をアイテムとしてテーブルに追加する関数
 def load_test_items():
    with open(loadFile) as json_file:
         test_list = json.load(json_file, parse_float=Decimal)
