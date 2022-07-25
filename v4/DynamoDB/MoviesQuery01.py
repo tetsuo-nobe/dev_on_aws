@@ -11,7 +11,7 @@ TABLE_NAME = 'Movies'
 
 def query_movies(year, dynamodb=None):
     if not dynamodb:
-        dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
+        dynamodb = boto3.resource('dynamodb', region_name="us-east-1")  
     table = dynamodb.Table(TABLE_NAME)
     # Query実行
     response = table.query(
