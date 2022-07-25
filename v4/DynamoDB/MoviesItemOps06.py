@@ -45,5 +45,5 @@ if __name__ == '__main__':
     delete_response = delete_underrated_movie("The Big New Movie", 2015, 8)
     if delete_response:
         print("Delete movie succeeded:")
-        pprint(movie_resp)
-        # pprint(movie_resp, sort_dicts=False)  # from Python 3.8
+        pprint(delete_response)
+        # pprint(delete_response, sort_dicts=False)  # from Python 3.8
