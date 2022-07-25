@@ -19,7 +19,7 @@ def delete_underrated_movie(title, year, rating, dynamodb=None):
 
     try:
         # 条件付きでdelete_item実行
-        # (このサンプルで指定された項目のratingは6.5なので、6以下という条件は満たさない)
+        # (このサンプルで指定された項目のratingは6.5であり、8以下という条件を満たすので削除される)
         response = table.delete_item(
             Key={
                 'year': year,
@@ -42,7 +42,7 @@ def delete_underrated_movie(title, year, rating, dynamodb=None):
 
 if __name__ == '__main__':
     print("Attempting a conditional delete...")
-    delete_response = delete_underrated_movie("The Big New Movie", 2015, 6)
+    delete_response = delete_underrated_movie("The Big New Movie", 2015, 8)
     if delete_response:
         print("Delete movie succeeded:")
         pprint(movie_resp)
