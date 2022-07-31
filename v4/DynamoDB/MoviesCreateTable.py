@@ -41,6 +41,7 @@ def create_movie_table(dynamodb=None):
         }
     )
     dynamodb.meta.client.get_waiter('table_exists').wait(TableName=TABLE_NAME) # テーブル作成完了まで待機
+    table = dynamodb.Table(TABLE_NAME)
     return table
 
 
