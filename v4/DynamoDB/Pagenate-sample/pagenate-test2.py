@@ -44,7 +44,7 @@ if __name__ == '__main__':
     def print_items(items,page):
         print(f"-- page {page}---------------------")
         for item in items:
-            print(f"\n{item['id']} : {item['seq']}")
+            print(f"{item['id']} : {item['seq']}")
 
     query_range = (1, 10)
     scan_items(query_range, print_items)
