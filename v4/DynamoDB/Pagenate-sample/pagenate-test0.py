@@ -13,11 +13,7 @@ loadFile  = 'testdata.json'
 # テーブルを作成する関数
 def create_test_table():
     dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
-    # 既存のテーブル削除
-    table = dynamodb.Table(tableName)
-    table.delete()
-    table.wait_until_not_exists()
-     # テーブル作成
+    # テーブル作成
     table = dynamodb.create_table(
         TableName=tableName,
         KeySchema=[
@@ -47,6 +43,7 @@ def create_test_table():
         }
     )
     table.wait_until_exists()
+    table = dynamodb.Table(tableName)
     return table
 
 # JSONファイルの内容をアイテムとしてテーブルに追加する関数
