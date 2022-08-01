@@ -6,7 +6,7 @@ import boto3
 from botocore.exceptions import NoCredentialsError,ClientError
 
 def presigned_url():
-    BUCKET = 'tnobe-presign'                            # バケット名
+    BUCKET = 'tnobe-s3-sample'                          # バケット名
     KEY = 'cat.jpg'                                     # オブジェクトのキー
     s3 = boto3.resource('s3')                           # S3クライアント取得
     url =  s3.meta.client.generate_presigned_url(       # 署名付きURL生成
