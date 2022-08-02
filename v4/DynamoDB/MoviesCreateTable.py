@@ -36,8 +36,8 @@ def create_movie_table(dynamodb=None):
 
         ],
         ProvisionedThroughput={
-            'ReadCapacityUnits': 5,
-            'WriteCapacityUnits': 5
+            'ReadCapacityUnits': 10,
+            'WriteCapacityUnits': 10
         }
     )
     dynamodb.meta.client.get_waiter('table_exists').wait(TableName=TABLE_NAME) # テーブル作成完了まで待機

@@ -4,7 +4,7 @@ import datetime
 import os
 from botocore.config import Config
 from aws_xray_sdk.core import patch
-patch(['boto3'])
+patch(['boto3'])          # Lambda関数から呼び出しているサービスのトレースを取得
 
 # X-RayのパッケージはLambda Layerとして登録して使用
 

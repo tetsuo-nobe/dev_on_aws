@@ -4,6 +4,10 @@
 
 ***
 
+- demo-dynamodb-basic.py
+  - DynamoDBに対する基本操作を実行する
+- demo-dynamodb-query-scam.py
+  - DynamoDBテーブルにQueryやScanを実行する
 - moviedata.json
   - サンプルデータ
 - MoviesCreateTable.py
@@ -46,6 +50,8 @@
       - Scanと Limitの基本的な使い方やレスポンスを確認する
     - pagenate-test2.py
       - Scan実行時に Limitを指定して区切りながらに項目を取得する。
+    - pagenate-test9-delete.py
+      - サンプル用のテーブルの削除  
     - testdata.json
       - サンプル用のデータ
 
