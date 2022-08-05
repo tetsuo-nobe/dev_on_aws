@@ -12,27 +12,27 @@
 - resource00-list-bucket.py
   - バケットのリストを取得して表示するサンプル
 - resource01-create-bucket.py
-  - バケットのリストを取得して表示するサンプル
+  - バケットを作成するサンプル
 - resource02-put-object.py
-  - バケットのリストを取得して表示するサンプル
+  - バケットにオブジェクトを格納するサンプル
 - resource03-upload-file.py
-  - バケットのリストを取得して表示するサンプル
+  - バケットにファイルをアップロードするサンプル
 - resource04-get-object.py
-  - バケットのリストを取得して表示するサンプル
+  - バケットからオブジェクトを取得するサンプル
 - resource05-download-file.py
-  - バケットのリストを取得して表示するサンプル
+  - バケットからファイルとしてダウンロードするサンプル
 - resource06-list-object.py
-  - バケットのリストを取得して表示するサンプル
+  - バケットのオブジェ句のリストを取得して表示するサンプル
 - resource07-delete-object.py
-  - バケットのリストを取得して表示するサンプル
+  - バケットのオブジェクトを削除するサンプル
 - resource08-multipart-upload.py
-  - バケットのリストを取得して表示するサンプル
+  - マルチパートアップロードのサンプル
 - resource09-multipart-download.py
-  - バケットのリストを取得して表示するサンプル
+  - マルチパートダウンロードのサンプル
 - resource10-presigned-url.py
-  - バケットのリストを取得して表示するサンプル
+  - 署名付きURLを生成するサンプル
 - resource11-delete-bucket.py
-  - バケットのリストを取得して表示するサンプル
+  - バケットの中の全てのオブジェクトとバケットを削除するサンプル
 
 
 
