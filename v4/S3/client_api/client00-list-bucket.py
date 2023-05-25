@@ -11,8 +11,11 @@ def get_bucket_name():
     s3client = boto3.client('s3')          # S3クライアント取得
     response = s3client.list_buckets()     # S3クライアントから全てのバケットを取得
     for bucket in response['Buckets']:     # バケットの表示   
-        region=s3client.head_bucket(Bucket=bucket['Name'])['ResponseMetadata']['HTTPHeaders']['x-amz-bucket-region']
-        print(f'bucket={bucket["Name"]},region={region}')
+        print(f'bucket={bucket["Name"]}')
+
+    # for bucket in response['Buckets']:     # バケットとリージョンの表示   
+    #     region=s3client.head_bucket(Bucket=bucket['Name'])['ResponseMetadata']['HTTPHeaders']['x-amz-bucket-region']
+    #     print(f'bucket={bucket["Name"]},region={region}')
     
 if __name__ == '__main__':
     try:

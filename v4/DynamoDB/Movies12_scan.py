@@ -14,7 +14,7 @@ TABLE_NAME = 'Movies'
 
 def scan_movies(year_range, display_movies, dynamodb=None):
     if not dynamodb:
-        dynamodb = boto3.resource('dynamodb', region_name="us-east-1")
+        dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
 
     table = dynamodb.Table(TABLE_NAME)
     # scanに指定するパラメータを定義

@@ -12,7 +12,7 @@ TABLE_NAME = 'Movies'
 
 def query_and_project_movies(year, title_range, dynamodb=None):
     if not dynamodb:
-        dynamodb = boto3.resource('dynamodb', region_name="us-east-1")
+        dynamodb = boto3.resource('dynamodb', region_name="ap-northeast-1")
 
     table = dynamodb.Table(TABLE_NAME)
     print(f"Get year, title, genres, and lead actor")
