@@ -80,13 +80,13 @@ apple の価格:200
 ## AWS IDE Toolkit for Cloud9 の AWS Explorer をさわってみよう
 
 1. Cloud9 画面左側から AWS アイコンまたは AWS タブをクリックします。
-   - AWS IDE toolkit の AWS Explorer が表示されます。
+   - AWS IDE Toolkit の AWS Explorer が表示されます。
    - ![s1](https://dev.nobelabo.net/images/github/s1.png)
-2. Cloud9 画面右下側から `profile:default` をクリックします。
+2. Cloud9 画面右下側から `AWS:profile:default` をクリックします。
    - 接続に使用するプロファイルやロールの一覧を表示して、`profile:default` をクリックします。
    - ![s2](https://dev.nobelabo.net/images/github/s2.png)
    - ![s3](https://dev.nobelabo.net/images/github/s3.png)
-3. AWS Explorer で `Add regions to AWS Explorer` をクリックします。
+3. AWS Explorer で `Add regions to AWS Explorer...` をクリックします。
    - ![s4](https://dev.nobelabo.net/images/github/s4.png)
 4. AWS Explorer で現在使用しているリージョンをチェックして Enter キーを押下します。
    - ![s5](https://dev.nobelabo.net/images/github/s5.png)
