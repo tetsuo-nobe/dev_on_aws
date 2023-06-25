@@ -76,9 +76,16 @@ apple の価格:200
   aws ec2 describe-instances  --query 'Reservations[*].Instances[*].InstanceId' --output text
   ```
 
-
-
 ---
 ## AWS IDE Toolkit for Cloud9 の AWS Explorer をさわってみよう
 
+1. Cloud9 画面左側から AWS アイコンまたは AWS タブをクリックします。
+   - AWS IDE toolkit の AWS Explorer が表示されます。
+2. Cloud9 画面右下側から `profile:default` をクリックします。
+   - 接続に使用するプロファイルやロールの一覧を表示して、`profile:default` をクリックします。
+3. AWS Explorer で `Add regions to AWS Explorer` をクリックします。
+4. AWS Explorer で現在使用しているリージョンをチェックして Enter キーを押下します。
+5. AWS Explorer で表示されたリージョン名を展開表示します。
+   - これにより、AWS リソース名の一覧が表示されます。ここから各リソースを参照できます。
+7. AWS Explorer で表示された S3 を展開表示して 1 つ以上のバケット名が表示されることを確認します。
 
