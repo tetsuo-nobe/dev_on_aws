@@ -10,23 +10,28 @@
 
 1. Cloud9 の画面下部のターミナルで次のコマンドを実行します。
   - `git clone` コマンドで GitHub リポジトリから Python のサンプルプログラムを取得します。
-  - `git` は Cloud9 に組み込まれています。
-```
-git clone https://github.com/tetsuo-nobe/dev_on_aws
-```
+  - `git` コマンドは Cloud9 に組み込まれています。
+  ```
+  git clone https://github.com/tetsuo-nobe/dev_on_aws
+  ```
 
-1. Python のサンプルプログラムが存在するフォルダに移動します。
+2. Python のサンプルプログラムが存在するフォルダに移動します。
 
-```
-cd  dev_on_aws/v4/Cloud9
-```
-1. Cloud9 の画面左側のエクスプローラーから `dev_on_aws/v4/Cloud9/basic.py` をダブルクリックして開きます。
-   * 
+  ```
+  cd  dev_on_aws/v4/Cloud9
+  ```
 
-```
-python basic.py 
-```
+3. Cloud9 の画面左側のエクスプローラーから `dev_on_aws/v4/Cloud9/basic.py` をダブルクリックして開きます。
+   - Python のコードが表示されたことを確認します。
+   - Cloud9 でコードを編集して実行できます。
 
+4. Cloud9 画面下部のターミナルで次のコマンドを実行します。
+    
+  ```
+  python basic.py 
+  ```
+5. basic.py が実行されて次の例のように表示されます。
+  - 最初に表示されるのは Python のコードで出力している実行日時です。
 ```
 2023-06-25 04:52:40.315054
 呼出し結果:Hello!Alex
@@ -36,20 +41,23 @@ apple の価格:200
 
 ## AWS CLI をさわってみよう
 
+1. Cloud9 画面下部のターミナルで次のコマンドを実行して AWS CLI が使用できることを確認します。
+   - Cloud9 には AWS CLI が組み込まれています。
+  ```
+  aws --version
+  ```
+   - 次のように AWS CLI のバージョンが表示されます。(バージョン番号が異なっても問題ありません。） 
+  ```
+  aws-cli/2.12.3 Python/3.11.4 Linux/4.14.314-238.539.amzn2.x86_64 exe/x86_64.amzn.2 prompt/off
+  ```
+2. AWS CLI を使用して Amazon EC2 インスタンスの情報を表示します。 
 
-```
-aws --version
-```
+  ```
+  aws ec2 describe-instances 
+  ```
+   - 多くの情報が表示されることを確認します。
+   - 確認後、ターミナルにプロンプトが戻らない場合は `q` キーを押下して下さい。
 
-```
-aws-cli/2.12.3 Python/3.11.4 Linux/4.14.314-238.539.amzn2.x86_64 exe/x86_64.amzn.2 prompt/off
-```
-
-```
-aws ec2 describe-instances 
-```
-
-q を押す
 
 ```
 aws ec2 describe-instances  --query 'Reservations[*].Instances[*].InstanceId' 
