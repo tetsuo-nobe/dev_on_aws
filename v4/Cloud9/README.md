@@ -95,4 +95,5 @@ apple の価格:200
    - ![s6](https://dev.nobelabo.net/images/github/s6.png)
 7. AWS Explorer で表示された S3 を展開表示して 1 つ以上のバケット名が表示されることを確認します。
    - ![s7](https://dev.nobelabo.net/images/github/s7.png)
-
+---
+## ワークは以上で終了です。この環境はそのまま残しておいて下さい。後でラボ 1 でも使用します。
