@@ -81,11 +81,18 @@ apple の価格:200
 
 1. Cloud9 画面左側から AWS アイコンまたは AWS タブをクリックします。
    - AWS IDE toolkit の AWS Explorer が表示されます。
+   - ![s1](https://dev.nobelabo.net/images/github/s1.png)
 2. Cloud9 画面右下側から `profile:default` をクリックします。
    - 接続に使用するプロファイルやロールの一覧を表示して、`profile:default` をクリックします。
+   - ![s2](https://dev.nobelabo.net/images/github/s2.png)
+   - ![s3](https://dev.nobelabo.net/images/github/s3.png)
 3. AWS Explorer で `Add regions to AWS Explorer` をクリックします。
+   - ![s4](https://dev.nobelabo.net/images/github/s4.png)
 4. AWS Explorer で現在使用しているリージョンをチェックして Enter キーを押下します。
-5. AWS Explorer で表示されたリージョン名を展開表示します。
+   - ![s5](https://dev.nobelabo.net/images/github/s5.png)
+6. AWS Explorer で表示されたリージョン名を展開表示します。
    - これにより、AWS リソース名の一覧が表示されます。ここから各リソースを参照できます。
+   - ![s6](https://dev.nobelabo.net/images/github/s6.png)
 7. AWS Explorer で表示された S3 を展開表示して 1 つ以上のバケット名が表示されることを確認します。
+   - ![s7](https://dev.nobelabo.net/images/github/s7.png)
 
