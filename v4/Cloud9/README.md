@@ -1,8 +1,18 @@
 This is README.md
 
+
+## 準備
+
+```
+git clone https://github.com/tetsuo-nobe/dev_on_aws
+```
+
+
 ```
 cd  dev_on_aws/v4/Cloud9
 ```
+
+## Cloud9　でシンプルな Python プログラムを動かしてみよう
 
 ```
 python basic.py 
@@ -14,6 +24,9 @@ python basic.py
 10
 apple の価格:200
 ```
+
+## AWS CLI をさわってみよう
+
 
 ```
 aws --version
@@ -41,9 +54,7 @@ aws ec2 describe-instances  --query 'Reservations[*].Instances[*].InstanceId' --
 aws ec2 describe-instances  --query 'Reservations[*].Instances[*].[InstanceId,InstanceType]' 
 ```
 
-```
-aws ec2 describe-instances --instance-ids 
-```
-
+---
+## AWS IDE Toolkit for Cloud9 の AWS Explorer をさわってみよう
 
 
