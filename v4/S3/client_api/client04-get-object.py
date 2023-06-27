@@ -4,10 +4,10 @@
 '''
 import boto3
 from botocore.exceptions import NoCredentialsError,ClientError
+from mybucket import bucket_name as bucket
 
 def get_object():
     s3client = boto3.client('s3')                  # S3クライアント取得
-    bucket = "tnobe-s3-sample-client"              # バケット名
     key = 'cat.jpg'                                # オブジェクトのキー(ファイル名)
     response = s3client.get_object(Bucket=bucket,Key=key)     # バケット名とキーを指定してオブジェクト作成
     body = response['Body'].read()

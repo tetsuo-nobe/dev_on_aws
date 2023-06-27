@@ -1,11 +1,11 @@
 import boto3
 from botocore.client import ClientError
+from mybucket import bucket_name as bucket
 
 try:
-    s3 = boto3.resource('s3')
-    bucket_name = "tnobe-s3-sample"
-    s3.meta.client.head_bucket(Bucket=bucket_name)
-    print(f'bucket {bucket_name} exists')
+    s3client = boto3.client('s3')
+    s3client.head_bucket(Bucket=bucket)
+    print(f'bucket {bucket} exists')
 except ClientError as clienterr:
     print('!!!! ClientError !!!!')
     print(clienterr)

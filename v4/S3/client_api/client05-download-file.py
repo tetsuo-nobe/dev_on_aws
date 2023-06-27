@@ -4,10 +4,10 @@
 '''
 import boto3
 from botocore.exceptions import NoCredentialsError,ClientError
+from mybucket import bucket_name as bucket
 
 def download_file():
     s3client = boto3.client('s3')                   # S3クライアント取得
-    bucket = "tnobe-s3-sample-client"               # S3バケット取得
     file_path= "Eiffel_downloaded.jpg"    # ダウンロードするオブジェクトのファイルパスを指定
     key = "Eiffel.jpg"                              # ダウンロードするオブジェクトのキーを指定
     s3client.download_file(bucket, key, file_path)  # ダウンロード実行

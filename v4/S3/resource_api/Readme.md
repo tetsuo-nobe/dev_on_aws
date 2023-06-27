@@ -1,14 +1,18 @@
-## AWS SDKでS3を操作するサンプル (Python)
+## AWS SDK で S3 を操作するサンプル (Python)
 
 ### リソース API を使用
 
 ***
+- mybucket.py
+  - サンプルで使用するバケット名を指定するファイル
 - AWSIcons.zip
   - サンプルで使用するデータ
 - cat.jpg
   - サンプルで使用する画像
 - Eiffel.jpg
   - サンプルで使用する画像
+- resource-bucket-exist-check.py
+  - バケットの存在チェックを行うサンプル
 - resource00-list-bucket.py
   - バケットのリストを取得して表示するサンプル
 - resource01-create-bucket.py

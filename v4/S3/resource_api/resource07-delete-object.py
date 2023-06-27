@@ -4,12 +4,12 @@
 '''
 import boto3
 from botocore.exceptions import NoCredentialsError,ClientError
+from mybucket import bucket_name
 
 def delete_object():
     s3 = boto3.resource('s3')
-    bucket = "tnobe-s3-sample"      # バケット名
     key = 'Eiffel.jpg'              # オブジェクトのキー(ファイル名)
-    obj = s3.Object(bucket,key)     # バケット名とキーを指定してオブジェクト作成
+    obj = s3.Object(bucket_name,key)     # バケット名とキーを指定してオブジェクト作成
     obj.delete()                    # 削除実行
     obj.wait_until_not_exists()     # 削除完了を確認
     print("Deleted :" + key)

@@ -4,10 +4,10 @@
 '''
 import boto3
 from botocore.exceptions import NoCredentialsError,ClientError
+from mybucket import bucket_name as bucket
 
 def list_object():
   s3client = boto3.client('s3')                                     # S3クライアント取得
-  bucket = "tnobe-s3-sample-client"                                 # バケット名
   prefix = ""                                                       # prefixの指定       
   response = s3client.list_objects_v2(Bucket=bucket, Prefix=prefix) # バケット内の該当オブジェクトのリストを取得
   for object in response['Contents']:                               # 取得したリストを表示

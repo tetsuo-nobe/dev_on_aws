@@ -6,8 +6,7 @@ import boto3
 import time
 from boto3.s3.transfer import TransferConfig
 from botocore.exceptions import NoCredentialsError,ClientError
-
-bucket_name = "tnobe-s3-sample"
+from mybucket import bucket_name
 
 def multipart_upload_by_upload_file():
     file_path= "AWSIcons.zip"                 # アップロードするオブジェクトのファイルパスを指定

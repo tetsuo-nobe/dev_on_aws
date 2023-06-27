@@ -4,14 +4,14 @@
 '''
 import boto3
 from botocore.exceptions import NoCredentialsError,ClientError
+from mybucket import bucket_name as bucket
 
 def presigned_url():
-    BUCKET = 'tnobe-s3-sample-client'                            # バケット名
     KEY = 'cat.jpg'                                     # オブジェクトのキー
     s3client = boto3.client('s3')                       # S3クライアント取得
     url =  s3client.generate_presigned_url(             # 署名付きURL生成
             ClientMethod = 'get_object',
-            Params = {'Bucket' : BUCKET, 'Key' : KEY},
+            Params = {'Bucket' : bucket, 'Key' : KEY},
             ExpiresIn = 30,
             HttpMethod = 'GET')
     print('Presigned URL: ', url)

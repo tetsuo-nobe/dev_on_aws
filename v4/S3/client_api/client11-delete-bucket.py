@@ -4,22 +4,22 @@
 '''
 import boto3
 from botocore.exceptions import NoCredentialsError,ClientError
+from mybucket import bucket_name as bucket
 
 def delete_bucket():
     s3client = boto3.client('s3')               # S3クライアント取得
-    bucket_name = "tnobe-s3-sample-client"      # バケット名指定
-    response = s3client.list_objects_v2(Bucket=bucket_name)  # バケット内の全オブジェクトを削除
+    response = s3client.list_objects_v2(Bucket=bucket)  # バケット内の全オブジェクトを削除
     keyCount = response['KeyCount']
     if keyCount > 0:
         s3client.delete_objects(
-            Bucket = bucket_name,
+            Bucket = bucket,
             Delete={
                     'Objects': [{
                         'Key': object['Key']
                     } for object in response['Contents']]
                 })
-    s3client.delete_bucket(Bucket=bucket_name) # バケット削除
-    print('Deleted bucket: ' + bucket_name)
+    s3client.delete_bucket(Bucket=bucket) # バケット削除
+    print('Deleted bucket: ' + bucket)
 
 
 if __name__ == '__main__':
