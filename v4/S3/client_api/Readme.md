@@ -1,6 +1,29 @@
-## AWS SDK で S3 を操作するサンプル (Python)
+# ワーク: AWS SDK で Amazon S3 を操作する
 
-### クライアント API を使用
+## 準備
+
+1. 講師のガイドにもとづき、AWS マネジメントコンソールにサインインしてください。
+
+2. Cloud9 のページを表示して 用意された環境を開いてください。
+
+## Cloud9 でサンプルのプログラムを動かしてみよう
+
+1. Cloud9 の画面下部のターミナルで次のコマンドを実行します。
+  - `git clone` コマンドで GitHub リポジトリから AWS SDK for Python (boto3) のサンプルを取得します。
+  - `git` コマンドは Cloud9 に組み込まれています。
+  ```
+  git clone https://github.com/tetsuo-nobe/dev_on_aws
+  ```
+
+2. AWS SDK for Python (boto3) のサンプルが存在するフォルダに移動します。
+
+  ```
+  cd  dev_on_aws/v4/S3/client_api
+  ```
+
+3. 以後、講師の解説をききながらサンプルを実行して下さい。
+
+## クライアント API を使用するサンプル
 
 ***
 - mybucket.py

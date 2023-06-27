@@ -1,6 +1,6 @@
-## AWS SDK で S3 を操作するサンプル (Python)
+## AWS SDK for Python (boto3) のサンプル 
 
-### リソース API を使用
+### リソース API を使用するサンプル
 
 ***
 - mybucket.py
