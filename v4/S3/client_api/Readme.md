@@ -1,4 +1,4 @@
-# ワーク: AWS SDK で Amazon S3 を操作する
+# ワーク: AWS SDK for Python (boto3) で Amazon S3 を操作してみよう
 
 ## 準備
 
