@@ -1,0 +1,12 @@
+[
+    {"userId": 1, "gameId": "G001", "score": 1000, "life": 1},
+    {"userId": 1, "gameId": "G002", "score": 2000, "life": 2},
+    {"userId": 1, "gameId": "G003", "score": 3000, "life": 3},
+    {"userId": 2, "gameId": "G001", "score": 1100, "life": 2},
+    {"userId": 2, "gameId": "G002", "score": 1200, "life": 1},
+    {"userId": 2, "gameId": "G003", "score": 1300, "life": 3},
+    {"userId": 3, "gameId": "G001", "score": 3100, "life": 3},
+    {"userId": 3, "gameId": "G002", "score": 3200, "life": 2},
+    {"userId": 3, "gameId": "G003", "score": 3300, "life": 1},
+    {"userId": 3, "gameId": "G004", "score": 3400, "life": 2}
+  ]

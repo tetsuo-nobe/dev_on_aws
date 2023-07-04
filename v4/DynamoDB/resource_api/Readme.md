@@ -1,4 +1,4 @@
-## AWS SDKでDynamoDBを操作するサンプル (Python)
+## AWS SDK で DynamoDB を操作するサンプル (boto3 resource API)
 ### 下記のドキュメントの内容をベースにいくつかのサンプルを追加
 #### https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/GettingStarted.html
 
