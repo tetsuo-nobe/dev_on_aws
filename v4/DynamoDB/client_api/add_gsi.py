@@ -4,6 +4,7 @@
 '''
 import boto3
 import botocore
+import time
 from  myconfig import table_name
 from  myconfig import index_name
 
@@ -31,8 +32,8 @@ def create_gsi():
                         "ProjectionType": "ALL"
                     },
                     "ProvisionedThroughput": {
-                        "ReadCapacityUnits": 1,
-                        "WriteCapacityUnits": 1,
+                        "ReadCapacityUnits": 2,
+                        "WriteCapacityUnits": 2,
                     }
                 }
             }
@@ -49,18 +50,22 @@ def create_gsi():
 
         ]
     )
-    waiter = ddbClient.get_waiter('table_exists') # テーブル作成完了まで待機
-    waiter.wait(TableName=table_name) 
-    response = ddbClient.describe_table(
-        TableName=table_name
-    )
-    return response
+    # GSI 作成時は waiter が使えないのでステータスのチェックを繰り返して作成完了まで待機する
+    index_status = ''
+    while index_status != 'ACTIVE':
+        time.sleep(30)
+        response = ddbClient.describe_table(
+            TableName=table_name
+        )
+        index_status = response['Table']['GlobalSecondaryIndexes'][0]['IndexStatus']
+        print('GSI 作成中です。しばらくお待ちください... ' + index_status)
+    return index_status
 
 # ここから実行開始
 if __name__ == '__main__':
     try:
         response = create_gsi()
-        print("Table status:", response['Table']['TableStatus'])
+        print("GSI status:", response)
     except botocore.exceptions.ClientError as err:
         print(err.response['Error']['Message'])
     except botocore.exceptions.ParamValidationError as error:
