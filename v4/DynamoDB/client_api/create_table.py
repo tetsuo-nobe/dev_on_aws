@@ -30,7 +30,7 @@ def create_score_table():
             {
                 'AttributeName': 'gameId',
                 'AttributeType': 'S'
-            },
+            }
 
         ],
         ProvisionedThroughput={

@@ -33,7 +33,7 @@
 * score_data.json
   - テーブルにロードするデータ
 * myconfig.py
-  - テーブル名の指定
+  - テーブル名やセカンダリインデックス名の指定
 * create_table.py
   - テーブルの作成
 * put_item.py
@@ -42,14 +42,20 @@
   - プライマリキーを指定した項目の取得
 * query.py
   - query を使用しパーティションキーだけを指定した項目の取得
-* pagenate.py
+* pagenate_scan.py
   - scan の結果をページ単位で表示
+* pagenate_query.py
+  - query の結果をページ単位で表示
 * partQL.py
   - partQL を使用した項目の取得
 * upate_item.py
   - プライマリキーを指定した条件付きの項目の更新
+* add_gsi.py
+  - グローバルセカンダリインデックスの作成
+* query_gsi.py
+  - グローバルセカンダリインデックスへのクエリー実行
 * delete_item.py
-  - プライマリキーを指定した項目の削除
+  - プライマリキーを指定した項目の削除  
 * delete_table.py
   - テーブルの削除
 
