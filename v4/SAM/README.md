@@ -32,9 +32,12 @@
 1. テンプレートを選択します。このデモでは、1のAWS Quick Start Templatesを選択します。
 
         
-        Which template source would you like to use?
-                1 - AWS Quick Start Templates
-                2 - Custom Template Location
+        Choose an AWS Quick Start application template
+              1 - Hello World Example
+              2 - Infrastructure event management
+              3 - Multi-step workflow
+              4 - Serverless Connector Hello World Example
+              5 - Multi-step workflow with Connectors
         Choice: 1
         
 
@@ -58,28 +61,30 @@
         We will proceed copying the template using pip.
 
         Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: 
-        
+
+1. Amazon CloudWatch Application Insightsによるモニタリングを指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。  
+
+        Would you like to enable monitoring using CloudWatch Application Insights?
+        For more info, please view https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html [y/N]: 
 
 1. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
   - 下記は番号に `00` を付けた場合の例です。
 
         
-        Project name [sam-app]:sam-app00
+        Project name [sam-app]: sam-app00
         
 
 
-1. 下記の内容を確認・編集します。
+1. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。
 
         - SAM テンプレート
-
-        - sam-app00/template.yaml 
-        - 上記ファイルにHelloWorldFunctionのプロパティに下記を追記して関数名を明示的に指定します。** `HelloWorldFunction` の後にご自分の番号を付けて下さい。**
-        -  FunctionName: HelloWorldFunction00
+          - sam-app00/template.yaml 
+          - 上記ファイルにHelloWorldFunctionのプロパティに下記を追記して関数名を明示的に指定します。** `HelloWorldFunction` の後にご自分の番号を付けて下さい。**
+        -  `FunctionName: HelloWorldFunction00``
 
         - デプロイするLambda関数
-
-        - sam-app00/hello_world/app.py
-        - デフォルトで {message: hello world}というJSONを返します。必要に応じて変更します。　
+          - sam-app00/hello_world/app.py
+          - デフォルトで {message: hello world}というJSONを返します。必要に応じて変更します。　
 
 
 1. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
