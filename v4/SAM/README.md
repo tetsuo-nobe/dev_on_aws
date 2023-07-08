@@ -68,7 +68,7 @@
         For more info, please view https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html [y/N]: 
 
 1. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
-  - 下記は番号に `00` を付けた場合の例です。
+  1. 下記は番号に `00` を付けた場合の例です。
 
         
         Project name [sam-app]: sam-app00
