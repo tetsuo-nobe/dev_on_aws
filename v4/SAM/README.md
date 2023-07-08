@@ -62,7 +62,7 @@
 
         Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: 
 
-1. Amazon CloudWatch Application Insightsによるモニタリングを指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。  
+1. Amazon CloudWatch Application Insights によるモニタリングを指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。  
 
         Would you like to enable monitoring using CloudWatch Application Insights?
         For more info, please view https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html [y/N]: 
@@ -79,11 +79,12 @@
 
 - SAM テンプレート
   - sam-app00/template.yaml 
-    - 上記ファイルにHelloWorldFunctionのプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けて下さい。**
+    - 上記ファイルに HelloWorldFunction のプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けて下さい。**
       -  `FunctionName: HelloWorldFunction00`
-  - デプロイするLambda関数
+      - 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
+  - デプロイする Lambda 関数
     - sam-app00/hello_world/app.py
-    - デフォルトで {message: hello world}というJSONを返します。必要に応じて変更します。　
+    - デフォルトで {message: hello world}という JSON を返します。必要に応じて変更します。　
 
 
 1. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
@@ -100,12 +101,12 @@
         
 
 1. sam deploy --guided を使用してデプロイを行います。
-  - sam deploy --guidedを使うと、sam deployのパラメータをファイルに保存し、以後、容易にデプロイできます。
+  - sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
         
         sam deploy --guided
         
 
-  - 以後、対話的に進めていくと、指定した内容がsam deploy実行時に必要パラメータとしてファイル（デフォルト:samconfig.toml）保存され、その後デプロイが実行されます。
+  - 以後、対話的に進めていくと、指定した内容が sam deploy 実行時に必要パラメータとしてファイル（デフォルト: samconfig.toml）保存され、その後デプロイが実行されます。
 
         
         Configuring SAM deploy
@@ -135,12 +136,12 @@
         
   - 以上でデプロイは完了です！
 
-  - 1回目のデプロイが完了後、2回目のsam deployを実施する時は、ファイル（デフォルト:samconfig.toml）が存在する場合は、そこから必要なパラメータが取得されるので、下記のように簡単なコマンドでデプロイできます。
+  - 1 回目のデプロイが完了後、2 回目の sam deploy を実施する時は、ファイル（デフォルト:samconfig.toml）が存在する場合は、そこから必要なパラメータが取得されるので、下記のように簡単なコマンドでデプロイできます。
 
         
         sam deploy 
         
-1. SAMで作成したスタックを削除するには、`sam delete` を実行します。
+1. SAM で作成したスタックを削除するには、`sam delete` を実行します。
 
         
         sam delete
@@ -152,7 +153,7 @@
 
 ## その他のローカルテスト用のコマンド 
 
-Lambda関数
+Lambda 関数
         
         sam local start-lambda
         
