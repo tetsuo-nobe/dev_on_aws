@@ -110,6 +110,9 @@ sam build
         
 
   -  以後、対話的に進めていくと、指定した内容が sam deploy 実行時に必要パラメータとしてファイル（デフォルト: samconfig.toml）保存され、その後デプロイが実行されます。
+    - `Stack Name [sam-app]` には、**`sam-app` にご自分の番号をつけた文字列を入力して下さい。**
+    - `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]:` には、**`y`** を入力して下さい。 
+    - 上記以外は、デフォルトのまま Enter キーを押下して下さい。
 
         ```
         Configuring SAM deploy
@@ -135,12 +138,21 @@ sam build
         (以下略)
         ```
 
-13. 以上でデプロイは完了です！
   -  **参考** : 1 回目のデプロイが完了後、2 回目の sam deploy を実施する時は、ファイル（デフォルト:samconfig.toml）が存在する場合は、そこから必要なパラメータが取得されるので、下記のように簡単なコマンドでデプロイできます。
 
         ```
         sam deploy 
         ```
+
+13. デプロイの完了後、**Outputs** に下記のような API の URL が表示されることを確認して、ブラウザの新しいタブでアクセスします。
+
+```
+Key             HelloWorldApi
+Description     API Gateway endpoint URL for Prod stage for Hello World function                                 
+Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod/hello/                                              
+```
+- ブラウザに `{"message": "hello world"}` と表示されることを確認して下さい。
+
 
 14. SAM で作成したスタックを削除するには、`sam delete` を実行します。
   - 削除確認の入力が求められるので、`y` を入力して下さい。 
