@@ -31,7 +31,15 @@
 
 3. テンプレートを選択します。このデモでは、1のAWS Quick Start Templatesを選択します。
 
-        ```
+        
+        Which template source would you like to use?
+               1 - AWS Quick Start Templates
+               2 - Custom Template Location
+        Choice: 1
+        
+
+4. アプリケーションのテンプレートを選択します。このデモでは、1 の Hello World Example を選択します。
+
         Choose an AWS Quick Start application template
               1 - Hello World Example
               2 - Infrastructure event management
@@ -39,21 +47,10 @@
               4 - Serverless Connector Hello World Example
               5 - Multi-step workflow with Connectors
         Choice: 1
-        ```
-
-4. アプリケーションのテンプレートを選択します。このデモでは、1 の Hello World Example を選択します。
-
-        ```
-        Choose an AWS Quick Start application template
-                1 - Hello World Example
-                2 - Infrastructure event management
-                3 - Multi-step workflow
-        Template: 1
-        ```
 
 5. AWS X-Ray によるトレース取得の有効化または無効化を指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。
 
-        ```
+        
         Based on your selections, the only Package type available is Zip.
         We will proceed to selecting the Package type as Zip.
 
@@ -61,12 +58,12 @@
         We will proceed copying the template using pip.
 
         Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: 
-        ```
+        
 6. Amazon CloudWatch Application Insights によるモニタリングを指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。  
-        ```
+        
         Would you like to enable monitoring using CloudWatch Application Insights?
         For more info, please view https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html [y/N]: 
-        ```
+        
 7. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
    
    - 下記は番号に `00` を付けた場合の例です。
@@ -92,10 +89,9 @@
 10. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
   -  **`00` 部分はご自分の番号に置換えて下さい。**
        
-        ```
         cd sam-app00
         sam build
-        ```
+        
 
 11. SAM を使用しローカルでテストします。
   - (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
@@ -114,7 +110,7 @@
 
   -  以後、対話的に進めていくと、指定した内容が sam deploy 実行時に必要パラメータとしてファイル（デフォルト: samconfig.toml）保存され、その後デプロイが実行されます。
 
-        
+        ```
         Configuring SAM deploy
         ======================
 
@@ -139,7 +135,8 @@
                 Managed S3 bucket: aws-sam-cli-managed-default-samclisourcebucket-31392rxojqwi
                 A different default S3 bucket can be set in samconfig.toml
         (以下略)
-        
+        ```
+
   13. 以上でデプロイは完了です！
 
     -  **参考** : 1 回目のデプロイが完了後、2 回目の sam deploy を実施する時は、ファイル（デフォルト:samconfig.toml）が存在する場合は、そこから必要なパラメータが取得されるので、下記のように簡単なコマンドでデプロイできます。
@@ -160,22 +157,22 @@
 ## その他のローカルテスト用のコマンド 
 
 Lambda 関数
-        
+        ```
         sam local start-lambda
-        
+        ```
 
-        
+        ```
         aws lambda invoke --function-name "HelloWorldFunction" --endpoint-url "http://127.0.0.1:3001" --no-verify-ssl out.txt
-        
+        ```
 
 API Gateway
-        
+        ```
         sam local start-api
-        
+        ```
 
-        
+        ```
         curl http://127.0.0.1:3000/hello
-        
+        ```
 
 
 
