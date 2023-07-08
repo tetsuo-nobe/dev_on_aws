@@ -187,7 +187,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 
 - Amazon API Gateway
 
-  1. SAM CLI でテスト用の API エンドポイントを起動
+  1. SAM CLI でテスト用の API エンドポイントを起動 (停止する時は Ctrl + c)
   
   ```
   sam local start-api
