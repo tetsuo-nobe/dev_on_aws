@@ -73,36 +73,33 @@
         
         Project name [sam-app]: sam-app00
         
-
-
 1. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。
-- **以後は `00` 部分はご自分の番号に置換えて下さい。**
+  - **以後は `00` 部分はご自分の番号に置換えて下さい。**
 
-- SAM テンプレート
-  - sam-app00/template.yaml 
-    - 上記ファイルに HelloWorldFunction のプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けて下さい。**
-      -  `FunctionName: HelloWorldFunction00`
-      - 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
-  - デプロイする Lambda 関数
-    - sam-app00/hello_world/app.py
-    - デフォルトで {message: hello world}という JSON を返します。必要に応じて変更します。　
-
+  - SAM テンプレート
+    - sam-app00/template.yaml 
+      - 上記ファイルに HelloWorldFunction のプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けて下さい。**
+        -  `FunctionName: HelloWorldFunction00`
+        - 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
+    - デプロイする Lambda 関数
+      - sam-app00/hello_world/app.py
+      - デフォルトで {message: hello world}という JSON を返します。必要に応じて変更します。　
 
 1. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
-- **`00` 部分はご自分の番号に置換えて下さい。**
+  - **`00` 部分はご自分の番号に置換えて下さい。**
         
         cd sam-app00
         sam build
         
 
 1. SAM を使用しローカルでテストします。
-- (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
+  - (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
 
         
         sam local invoke 
         
-- 下記のように Lambda 関数で return している文字列が表示されることを確認します。
-  - `{"statusCode": 200, "body": "{\"message\": \"hello world\"}`
+  - 下記のように Lambda 関数で return している文字列が表示されることを確認します。
+    - `{"statusCode": 200, "body": "{\"message\": \"hello world\"}`
 
 1. sam deploy --guided を使用してデプロイを行います。
   - sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
