@@ -133,7 +133,7 @@ sam build
   - `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]:` には、**`y`** を入力して下さい。 
   - 上記以外は、デフォルトのまま Enter キーを押下して下さい。
 
-        ```
+        
         Configuring SAM deploy
         ======================
 
@@ -155,7 +155,7 @@ sam build
         SAM configuration environment [default]: 
 
         (以下略)
-        ```
+        
 
   -  **参考** : 1 回目のデプロイが完了後、2 回目の sam deploy を実施する時は、ファイル（デフォルト:samconfig.toml）が存在する場合は、そこから必要なパラメータが取得されるので、下記のように簡単なコマンドでデプロイできます。
 
