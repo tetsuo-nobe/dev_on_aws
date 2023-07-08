@@ -56,7 +56,7 @@
         Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: 
         
 
-1. プロジェクト名を指定します。** `sam-app` の後にご自分の番号を付けて下さい。**
+1. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
   - 下記は番号に `00` を付けた場合の例です。
 
         
