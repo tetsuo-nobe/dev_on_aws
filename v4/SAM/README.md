@@ -178,6 +178,9 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
         
         sam delete
 
+ 
+14. 以上でワークは終了です。お疲れ様でした！
+
  <br />
  <br />
  <br />
