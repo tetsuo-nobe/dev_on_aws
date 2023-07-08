@@ -83,9 +83,9 @@
  
          1. 上記ファイルに HelloWorldFunction のプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けて下さい。**
 
-           1.  `FunctionName: HelloWorldFunction00`
+           FunctionName: HelloWorldFunction00
 
-           1. 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
+           注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
 
        1. デプロイする Lambda 関数
 
@@ -97,9 +97,10 @@
 
   1. **`00` 部分はご自分の番号に置換えて下さい。**
         
+        ```
         cd sam-app00
         sam build
-        
+        ```
 
 1. SAM を使用しローカルでテストします。
 
@@ -109,9 +110,9 @@
         sam local invoke 
         
   1. 下記のように Lambda 関数で return している文字列が表示されることを確認します。
-
-    1. `{"statusCode": 200, "body": "{\"message\": \"hello world\"}`
-
+        ```
+        {"statusCode": 200, "body": "{\"message\": \"hello world\"}`
+        ```
 1. sam deploy --guided を使用してデプロイを行います。
 
   1. sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
