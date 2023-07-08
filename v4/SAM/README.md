@@ -79,11 +79,11 @@
 
 - SAM テンプレート
   - sam-app00/template.yaml 
-  - 上記ファイルにHelloWorldFunctionのプロパティに下記を追記して関数名を明示的に指定します。** `HelloWorldFunction` の後にご自分の番号を付けて下さい。**
--  `FunctionName: HelloWorldFunction00``
+    - 上記ファイルにHelloWorldFunctionのプロパティに下記を追記して関数名を明示的に指定します。** `HelloWorldFunction` の後にご自分の番号を付けて下さい。**
+    -  `FunctionName: HelloWorldFunction00`
   - デプロイするLambda関数
-  - sam-app00/hello_world/app.py
-  - デフォルトで {message: hello world}というJSONを返します。必要に応じて変更します。　
+    - sam-app00/hello_world/app.py
+    - デフォルトで {message: hello world}というJSONを返します。必要に応じて変更します。　
 
 
 1. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
