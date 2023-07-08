@@ -96,11 +96,13 @@
         
 
 1. SAM を使用しローカルでテストします。
-  - (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
+- (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
 
         
         sam local invoke 
         
+- 下記のように Lambda 関数で return している文字列が表示されることを確認します。
+  - `{"statusCode": 200, "body": "{\"message\": \"hello world\"}`
 
 1. sam deploy --guided を使用してデプロイを行います。
   - sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
