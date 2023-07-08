@@ -41,13 +41,13 @@
         sam --version
         
 
-2. SAM のリソースを作成します。デモでは Python の Lambda 関数を作成します。
+2. SAM のリソースを作成します。このワークでは Python の Lambda 関数を作成します。
 
         
         sam init --runtime python3.7
         
 
-3. テンプレートを選択します。このデモでは、1のAWS Quick Start Templatesを選択します。
+3. テンプレートを選択します。このワークでは、1のAWS Quick Start Templatesを選択します。
 
         
         Which template source would you like to use?
@@ -56,7 +56,7 @@
         Choice: 1
         
 
-4. アプリケーションのテンプレートを選択します。このデモでは、1 の Hello World Example を選択します。
+4. アプリケーションのテンプレートを選択します。このワークでは、1 の Hello World Example を選択します。
 
         Choose an AWS Quick Start application template
               1 - Hello World Example
@@ -66,7 +66,7 @@
               5 - Multi-step workflow with Connectors
         Choice: 1
 
-5. AWS X-Ray によるトレース取得の有効化または無効化を指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。
+5. AWS X-Ray によるトレース取得の有効化または無効化を指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。
 
         
         Based on your selections, the only Package type available is Zip.
@@ -77,7 +77,7 @@
 
         Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: 
         
-6. Amazon CloudWatch Application Insights によるモニタリングを指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。  
+6. Amazon CloudWatch Application Insights によるモニタリングを指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。  
         
         Would you like to enable monitoring using CloudWatch Application Insights?
         For more info, please view https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html [y/N]: 
