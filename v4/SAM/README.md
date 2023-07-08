@@ -128,9 +128,9 @@ sam build
         
 
   -  以後、対話的に進めていくと、指定した内容が sam deploy 実行時に必要パラメータとしてファイル（デフォルト: samconfig.toml）保存され、その後デプロイが実行されます。
-    - `Stack Name [sam-app]` には、**`sam-app` にご自分の番号をつけた文字列を入力して下さい。**
-    - `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]:` には、**`y`** を入力して下さい。 
-    - 上記以外は、デフォルトのまま Enter キーを押下して下さい。
+  - `Stack Name [sam-app]` には、**`sam-app` にご自分の番号をつけた文字列を入力して下さい。**
+  - `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]:` には、**`y`** を入力して下さい。 
+  - 上記以外は、デフォルトのまま Enter キーを押下して下さい。
 
         ```
         Configuring SAM deploy
