@@ -185,27 +185,15 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 
 ## その他のローカルテスト用のコマンド 
 
-- Lambda 関数
-
-  - SAM CLI 
-  
-  ```
-  sam local start-lambda
-   ```
-  - AWS CLI
-  ```
-   aws lambda invoke --function-name "HelloWorldFunction" --endpoint-url "http://127.0.0.1:3001" --no-verify-ssl out.txt
-   ```
-
 - Amazon API Gateway
 
-  - SAM CLI   
+  1. SAM CLI でテスト用の API エンドポイントを起動
   
   ```
   sam local start-api
   ```
 
-  - curl コマンド   
+  2. 新しいターミナルを開き、curl コマンドでテスト実行   
 
   ```
   curl http://127.0.0.1:3000/hello
