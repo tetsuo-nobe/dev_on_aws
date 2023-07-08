@@ -156,25 +156,31 @@
 
 ## その他のローカルテスト用のコマンド 
 
-Lambda 関数
+- Lambda 関数
 
-        ```
-        sam local start-lambda
-        ```
+  - sam CLI 
+  
+  ```
+  sam local start-lambda
+   ```
+  - AWS CLI
+  ```
+   aws lambda invoke --function-name "HelloWorldFunction" --endpoint-url "http://127.0.0.1:3001" --no-verify-ssl out.txt
+   ```
 
-        ```
-        aws lambda invoke --function-name "HelloWorldFunction" --endpoint-url "http://127.0.0.1:3001" --no-verify-ssl out.txt
-        ```
+- Amazon API Gateway
 
-API Gateway
-        
-        ```
-        sam local start-api
-        ```
+  - sam CLI   
+  
+  ```
+  sam local start-api
+  ```
 
-        ```
-        curl http://127.0.0.1:3000/hello
-        ```
+  - curl コマンド   
+
+  ```
+  curl http://127.0.0.1:3000/hello
+  ```
 
 
 
