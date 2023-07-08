@@ -70,9 +70,9 @@
 1. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
 
    1. 下記は番号に `00` を付けた場合の例です。
-        
+        ```
         Project name [sam-app]: sam-app00
-        
+        ```
 1. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。
 
    1. **以後は `00` 部分はご自分の番号に置換えて下さい。**
@@ -83,15 +83,15 @@
  
          1. 上記ファイルに HelloWorldFunction のプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けて下さい。**
 
-         1.  `FunctionName: HelloWorldFunction00`
+           1.  `FunctionName: HelloWorldFunction00`
 
-         1. 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
+           1. 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
 
        1. デプロイする Lambda 関数
 
       1. sam-app00/hello_world/app.py
 
-      1. デフォルトで {message: hello world}という JSON を返します。必要に応じて変更します。　
+        1. デフォルトで {message: hello world}という JSON を返します。必要に応じて変更します。　
 
 1. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
 
