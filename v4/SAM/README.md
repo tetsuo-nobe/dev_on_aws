@@ -14,8 +14,26 @@
 
 ---
 
-## 手順
-* 以降の手順を実施して AWS SAM で API Gateway の API + Lambda 関数を作成して下さい。
+## Cloud9 の一時認証情報の無効化
+1. Cloud9 画面の右上にある**歯車アイコン**をクリックします。
+1. Preferences タブ の左側で **AWS Settings** をクリックします。
+1. 右側の **Credentials** にある **AWS managed temporary credentials** トグルを OFFにします。
+  ![codepipeline-demo-img](https://eks.nobelabo.net/images/mod7-cloud9.png)
+1. Preferences のタブを閉じます。
+
+---
+
+## 現在の IAM ロールの確認
+
+1. Cloud9 のターミナルで次のコマンドを実行します。 
+   ```
+   aws sts get-caller-identity
+   ```
+1. 出力された Arn に、**my-SAM-Work-Role** という文字が含まれていることを確認します。
+
+---
+
+## AWS SAM を使用した API Gateway の API + Lambda 関数の作成
       
 1. Cloud9 のターミナルで下記を実行して SAM のバージョンを確認します。
 
