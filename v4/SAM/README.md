@@ -97,7 +97,7 @@
       - sam-app00/template.yaml 
         - 上記ファイルに HelloWorldFunction のプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けて下さい。**
         ```
-           FunctionName: HelloWorldFunction00
+        FunctionName: HelloWorldFunction00
         ```
         - 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
 
