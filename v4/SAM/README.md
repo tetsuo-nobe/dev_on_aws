@@ -23,15 +23,15 @@
         sam --version
         
 
-1. SAM のリソースを作成します。デモでは Python の Lambda 関数を作成します。
+2. SAM のリソースを作成します。デモでは Python の Lambda 関数を作成します。
 
         
         sam init --runtime python3.7
         
 
-1. テンプレートを選択します。このデモでは、1のAWS Quick Start Templatesを選択します。
+3. テンプレートを選択します。このデモでは、1のAWS Quick Start Templatesを選択します。
 
-        
+        ```
         Choose an AWS Quick Start application template
               1 - Hello World Example
               2 - Infrastructure event management
@@ -39,21 +39,21 @@
               4 - Serverless Connector Hello World Example
               5 - Multi-step workflow with Connectors
         Choice: 1
-        
+        ```
 
-1. アプリケーションのテンプレートを選択します。このデモでは、1 の Hello World Example を選択します。
+4. アプリケーションのテンプレートを選択します。このデモでは、1 の Hello World Example を選択します。
 
-        
+        ```
         Choose an AWS Quick Start application template
                 1 - Hello World Example
                 2 - Infrastructure event management
                 3 - Multi-step workflow
         Template: 1
-        
+        ```
 
-1. AWS X-Ray によるトレース取得の有効化または無効化を指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。
+5. AWS X-Ray によるトレース取得の有効化または無効化を指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。
 
-        
+        ```
         Based on your selections, the only Package type available is Zip.
         We will proceed to selecting the Package type as Zip.
 
@@ -61,66 +61,58 @@
         We will proceed copying the template using pip.
 
         Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: 
-
-1. Amazon CloudWatch Application Insights によるモニタリングを指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。  
-
+        ```
+6. Amazon CloudWatch Application Insights によるモニタリングを指定します。このデモでは、そのまま Enter キーを押下して N (無効化)を選択します。  
+        ```
         Would you like to enable monitoring using CloudWatch Application Insights?
         For more info, please view https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html [y/N]: 
+        ```
+7. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
+   
+   - 下記は番号に `00` を付けた場合の例です。
 
-1. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
-
-   1. 下記は番号に `00` を付けた場合の例です。
         ```
         Project name [sam-app]: sam-app00
         ```
-1. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。
 
-   1. **以後は `00` 部分はご自分の番号に置換えて下さい。**
+9. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。
 
-   1. SAM テンプレート
- 
-       1. sam-app00/template.yaml 
- 
-         1. 上記ファイルに HelloWorldFunction のプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けて下さい。**
-
+  - **以後は `00` 部分はご自分の番号に置換えて下さい。**
+    - SAM テンプレート
+      - sam-app00/template.yaml 
+        - 上記ファイルに HelloWorldFunction のプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けて下さい。**
+        ```
            FunctionName: HelloWorldFunction00
+        ```
+        - 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
 
-           注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
-
-       1. デプロイする Lambda 関数
-
-      1. sam-app00/hello_world/app.py
-
-        1. デフォルトで {message: hello world}という JSON を返します。必要に応じて変更します。　
-
-1. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
-
-  1. **`00` 部分はご自分の番号に置換えて下さい。**
-        
+    - デプロイする Lambda 関数
+      - sam-app00/hello_world/app.py
+        - デフォルトで {message: hello world}という JSON を返します。必要に応じて変更します。　
+10. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
+  -  **`00` 部分はご自分の番号に置換えて下さい。**
+       
         ```
         cd sam-app00
         sam build
         ```
 
-1. SAM を使用しローカルでテストします。
-
-  1. (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
-
-        
-        sam local invoke 
-        
-  1. 下記のように Lambda 関数で return している文字列が表示されることを確認します。
-        ```
-        {"statusCode": 200, "body": "{\"message\": \"hello world\"}`
-        ```
-1. sam deploy --guided を使用してデプロイを行います。
-
-  1. sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
+11. SAM を使用しローカルでテストします。
+  - (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
+  ```
+    sam local invoke 
+  ```
+  - 下記のように Lambda 関数で return している文字列が表示されることを確認します。
+  ```
+  {"statusCode": 200, "body": "{\"message\": \"hello world\"}`
+  ```
+12. sam deploy --guided を使用してデプロイを行います。
+  - sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
         
         sam deploy --guided
         
 
-  1. 以後、対話的に進めていくと、指定した内容が sam deploy 実行時に必要パラメータとしてファイル（デフォルト: samconfig.toml）保存され、その後デプロイが実行されます。
+  -  以後、対話的に進めていくと、指定した内容が sam deploy 実行時に必要パラメータとしてファイル（デフォルト: samconfig.toml）保存され、その後デプロイが実行されます。
 
         
         Configuring SAM deploy
@@ -148,19 +140,18 @@
                 A different default S3 bucket can be set in samconfig.toml
         (以下略)
         
-  1. 以上でデプロイは完了です！
+  13. 以上でデプロイは完了です！
 
-  1. **参考** : 1 回目のデプロイが完了後、2 回目の sam deploy を実施する時は、ファイル（デフォルト:samconfig.toml）が存在する場合は、そこから必要なパラメータが取得されるので、下記のように簡単なコマンドでデプロイできます。
+    -  **参考** : 1 回目のデプロイが完了後、2 回目の sam deploy を実施する時は、ファイル（デフォルト:samconfig.toml）が存在する場合は、そこから必要なパラメータが取得されるので、下記のように簡単なコマンドでデプロイできます。
 
         
         sam deploy 
         
-1. SAM で作成したスタックを削除するには、`sam delete` を実行します。
-
+14. SAM で作成したスタックを削除するには、`sam delete` を実行します。
+  - 削除確認の入力が求められるので、`y` を入力して下さい。 
         
         sam delete
 
-  - 削除確認の入力が求められるので、`y` を入力して下さい。 
  <br />
  <br />
  <br />
