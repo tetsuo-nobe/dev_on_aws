@@ -90,7 +90,7 @@
         Project name [sam-app]: sam-app00
         ```
 
-9. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。
+8. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。
 
   - **以後は `00` 部分はご自分の番号に置換えて下さい。**
     - SAM テンプレート
@@ -104,7 +104,7 @@
     - デプロイする Lambda 関数
       - sam-app00/hello_world/app.py
         - デフォルトで {message: hello world}という JSON を返します。必要に応じて変更します。　
-10. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
+9. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
   -  **`00` 部分はご自分の番号に置換えて下さい。**
 
 ```
@@ -112,7 +112,7 @@ cd sam-app00
 sam build
 ```        
 
-11. SAM を使用しローカルでテストします。
+10. SAM を使用しローカルでテストします。
   - (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
   ```
     sam local invoke 
@@ -121,7 +121,7 @@ sam build
   ```
   {"statusCode": 200, "body": "{\"message\": \"hello world\"}`
   ```
-12. sam deploy --guided を使用してデプロイを行います。
+11. sam deploy --guided を使用してデプロイを行います。
   - sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
         
         sam deploy --guided
@@ -162,7 +162,7 @@ sam build
         sam deploy 
         ```
 
-13. デプロイの完了後、**Outputs** に下記のような API の URL が表示されることを確認して、ブラウザの新しいタブでアクセスします。
+12. デプロイの完了後、**Outputs** に下記のような API の URL が表示されることを確認して、ブラウザの新しいタブでアクセスします。
 
 ```
 Key             HelloWorldApi
@@ -172,7 +172,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 - ブラウザに `{"message": "hello world"}` と表示されることを確認して下さい。
 
 
-14. SAM で作成したスタックを削除するには、`sam delete` を実行します。
+13. SAM で作成したスタックを削除するには、`sam delete` を実行します。
   - 削除確認の入力が求められるので、`y` を入力して下さい。 
         
         sam delete
