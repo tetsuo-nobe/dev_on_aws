@@ -95,7 +95,8 @@
         sam build
         
 
-1. SAM を使用しローカルでテストします。(Docker が必要です。)
+1. SAM を使用しローカルでテストします。
+  - (この操作には Docker が必要ですが Cloud9 は Docker は導入済ですので問題ありません。)
 
         
         sam local invoke 
