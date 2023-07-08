@@ -182,8 +182,9 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
  <br />
  <br />
 
+---
 
-## その他のローカルテスト用のコマンド 
+## 参考: その他のローカルテスト用のコマンド 
 
 - Amazon API Gateway
 
