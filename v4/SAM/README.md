@@ -47,7 +47,7 @@
         sam init --runtime python3.7
         
 
-3. テンプレートを選択します。このワークでは、1のAWS Quick Start Templatesを選択します。
+3. テンプレートを選択します。このワークでは、1 の AWS Quick Start Templatesを選択します。
 
         
         Which template source would you like to use?
