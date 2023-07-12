@@ -23,7 +23,10 @@
   ```
 
 3. 以後、講師の解説をききながらサンプルを実行して下さい。
-
+  - 例: client-bucket-exist-check.py を実行する場合
+  ```
+  python  client-bucket-exist-check.py
+  ```
 
 ## クライアント API を使用するサンプル
 
