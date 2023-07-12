@@ -18,6 +18,8 @@ def delete_bucket():
                     } for object in response['Contents']]
                 })
     s3client.delete_bucket(Bucket=bucket) # バケット削除
+    waiter = s3client.get_waiter('bucket_not_exists')
+    waiter.wait(Bucket=bucket)
     print('Deleted bucket: ' + bucket)
 
 

@@ -10,6 +10,8 @@ def create_bucket():
     create_bucket_config = {}           # バケットの構成を作成
     create_bucket_config["LocationConstraint"] = "ap-northeast-1"  # リージョンの指定
     s3client.create_bucket(Bucket=bucket, CreateBucketConfiguration=create_bucket_config)  # バケットの作成
+    waiter = s3client.get_waiter('bucket_exists')
+    waiter.wait(Bucket=bucket)
     print('Created bucket: ' + bucket)
 
 
