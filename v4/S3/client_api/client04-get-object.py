@@ -1,4 +1,3 @@
-# Copyright 2022 Amazon Web Services, Inc. or its affiliates. All rights reserved.
 '''
   バケットからオブジェクトを取得:get_objectを使用 (Client API)
 '''

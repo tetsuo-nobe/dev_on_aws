@@ -1,4 +1,3 @@
-# Copyright 2022 Amazon Web Services, Inc. or its affiliates. All rights reserved.
 '''
   バケットのリストを取得して表示 (Client API)
 '''

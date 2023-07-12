@@ -1,4 +1,3 @@
-# Copyright 2022 Amazon Web Services, Inc. or its affiliates. All rights reserved.
 '''
   バケットにオブジェクトを格納:upload_fileを使用 (Client API)
 '''

@@ -1,4 +1,3 @@
-# Copyright 2022 Amazon Web Services, Inc. or its affiliates. All rights reserved.
 '''
   バケットにオブジェクトを格納:put_objectを使用  (Client API)
 '''

@@ -50,6 +50,8 @@
   - バケットからオブジェクトを取得するサンプル
 - client05-download-file.py
   - バケットからファイルとしてダウンロードするサンプル
+- client05B-upload-download-fileobjb.py
+  - 変数データのアップロードとダウンロードして変数に保持するサンプル
 - client06-list-object.py
   - バケットのオブジェ句のリストを取得して表示するサンプル
 - client07-delete-object.py
