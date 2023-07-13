@@ -188,6 +188,10 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 
         sam remote invoke --stack-name sam-app00 --region ap-northeast-1
 
+        - 下記のように Lambda 関数で return している文字列が表示されることを確認します。
+        ```
+        {"statusCode": 200, "body": "{\"message\": \"hello world\"}"}
+        ```
 
 14. SAM で作成したスタックを削除するには、`sam delete` を実行します。
   - 削除確認の入力が求められるので、`y` を入力して下さい。 
