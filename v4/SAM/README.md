@@ -34,6 +34,16 @@
 ---
 
 ## AWS SAM を使用した API Gateway の API + Lambda 関数の作成
+
+* SAM CLI を更新します。
+
+        mkdir tmp && cd tmp
+        wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+        unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+        sudo ./sam-installation/install --update
+        cd ..
+        rm -rf tmp
+
       
 1. Cloud9 のターミナルで下記を実行して SAM のバージョンを確認します。
 
@@ -130,8 +140,9 @@ sam build
   -  以後、対話的に進めていくと、指定した内容が sam deploy 実行時に必要パラメータとしてファイル（デフォルト: samconfig.toml）保存され、その後デプロイが実行されます。
   - `Stack Name [sam-app]` には、**`sam-app` にご自分の番号をつけた文字列を入力して下さい。**
   - `AWS Region` には、`ap-northeast-1` を入力して下さい。
+  - その後は、**下記以外は、デフォルトのまま Enter キーを押下**して下さい。
   - `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]:` には、**`y`** を入力して下さい。 
-  - 上記以外は、デフォルトのまま Enter キーを押下して下さい。
+
 
         
         Configuring SAM deploy
@@ -173,7 +184,12 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 - ブラウザに `{"message": "hello world"}` と表示されることを確認して下さい。
 
 
-13. SAM で作成したスタックを削除するには、`sam delete` を実行します。
+13. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。
+
+       sam remote invoke --stack-name sam-app99 --region ap-northeast-1
+
+
+14. SAM で作成したスタックを削除するには、`sam delete` を実行します。
   - 削除確認の入力が求められるので、`y` を入力して下さい。 
         
         sam delete
