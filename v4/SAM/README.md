@@ -186,7 +186,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 
 13. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。
 
-       sam remote invoke --stack-name sam-app99 --region ap-northeast-1
+        sam remote invoke --stack-name sam-app99 --region ap-northeast-1
 
 
 14. SAM で作成したスタックを削除するには、`sam delete` を実行します。
@@ -195,7 +195,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
         sam delete
 
  
-14. 以上でワークは終了です。お疲れ様でした！
+* 以上でワークは終了です。お疲れ様でした！
 
  <br />
  <br />
