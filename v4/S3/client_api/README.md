@@ -21,6 +21,7 @@
   sudo yum -y install xz-devel
   pyenv install 3.9.13
   pyenv global 3.9.13
+  
   ```
 
   - 次に PATH を設定します。
