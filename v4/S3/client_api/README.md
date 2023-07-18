@@ -22,7 +22,14 @@
   cd  dev_on_aws/v4/S3/client_api
   ```
 
-3. 以後、講師の解説をききながらサンプルを実行して下さい。
+3. Cloud9 の左側のナビゲーターより、**dev_on_aws/v4/S3/client_api/mybucket.py** を開きます。
+  - bucket_name に、このワーク用のバケット名を指定します。
+  - バケット名はユニークにしてください。**アンダースコアは使用できません。**
+  ```
+  bucket_name = 'tnobe-s3-sample'
+  ```
+
+4. 以後、講師の解説をききながらサンプルを実行して下さい。
   - 例: client-bucket-exist-check.py を実行する場合
   ```
   python  client-bucket-exist-check.py
