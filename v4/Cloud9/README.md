@@ -86,9 +86,9 @@ apple の価格:200
    - 接続に使用するプロファイルやロールの一覧を表示して、`profile:default` をクリックします。
    - ![s2](https://dev.nobelabo.net/images/github/s2.png)
    - ![s3](https://dev.nobelabo.net/images/github/s3.png)
-3. AWS Explorer で `Add regions to AWS Explorer...` をクリックします。
+3. (もし下図のようになった場合) AWS Explorer で `Add regions to AWS Explorer...` をクリックします。
    - ![s4](https://dev.nobelabo.net/images/github/s4.png)
-4. AWS Explorer で現在使用しているリージョンをチェックして Enter キーを押下します。
+4. (もし下図のようになった場合) AWS Explorer で現在使用しているリージョンをチェックして Enter キーを押下します。
    - ![s5](https://dev.nobelabo.net/images/github/s5.png)
 6. AWS Explorer で表示されたリージョン名を展開表示します。
    - これにより、AWS リソース名の一覧が表示されます。ここから各リソースを参照できます。
