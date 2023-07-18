@@ -64,7 +64,7 @@ apple の価格:200
   aws ec2 describe-instances  --query 'Reservations[*].Instances[*].InstanceId' 
   ```
 
-4. AWS CLI の `query` オプションを使用して Amazon EC2 インスタンスの情報の表示形式を指定します。 
+4. AWS CLI の `query` オプションを使用して Amazon EC2 インスタンスの情報の一部だけを表示します。 
    - 次の例ではインスタンス ID と インスタンスタイプを表示しています。
   ```
   aws ec2 describe-instances  --query 'Reservations[*].Instances[*].[InstanceId,InstanceType]' 
