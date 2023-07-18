@@ -1,6 +1,5 @@
 '''
-  テーブル作成
-  ゲームのスコア情報を管理するテーブル。パーティションキー userId, ソートキー gameId
+  テーブル削除
 '''
 import boto3
 import botocore
@@ -15,16 +14,13 @@ def delete_table():
     )
     waiter = ddbClient.get_waiter('table_not_exists') # テーブル削除完了まで待機
     waiter.wait(TableName=table_name) 
-    response = ddbClient.describe_table(
-        TableName=table_name
-    )
-    return response
+
 
 # ここから実行開始
 if __name__ == '__main__':
     try:
         response = delete_table()
-        print("Table status:", response['Table']['TableStatus'])
+        print("Table Deleted")
     except botocore.exceptions.ClientError as err:
         print(err.response['Error']['Message'])
     except botocore.exceptions.ParamValidationError as error:
