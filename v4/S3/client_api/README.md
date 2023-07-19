@@ -98,7 +98,7 @@
   - マルチパートアップロードのサンプル
 - client10-multipart-download.py
   - マルチパートダウンロードのサンプル
-- client11-presigned-url.py
+- client11-presigned_url.py
   - 署名付きURLを生成するサンプル
 - client12-delete-bucket.py
   - バケットの中の全てのオブジェクトとバケットを削除するサンプル
