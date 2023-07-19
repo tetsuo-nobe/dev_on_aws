@@ -1,0 +1,92 @@
+<!doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Demo: API Gateway Call using APIGateway SDK</title>
+    </title>
+    <link href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="apigClient.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#ajax-button').click(
+                function () {
+                    var apigClient = apigClientFactory.newClient({region: 'ap-northeast-1' });
+                    var params = {
+                        //This is where any header, path, or querystring request params go. The key is the parameter named as defined in the API
+                        //param0: '0',
+                        //param1: '1'
+                    };
+                    var body = {
+                        //This is where you define the body of the request
+                    };
+                    var additionalParams = {
+                        //If there are any unmodeled query parameters or headers that need to be sent with the request you can add them here
+                        //headers: {
+                        //    param0: '0',
+                        //    param1: '1'
+                        //},
+                        //queryParams: {
+                        //    param0: '0',
+                        //    param1: '1'
+                        //}
+                    };
+                    apigClient.rootGet(params, body, additionalParams)
+                        .then(function (result) {
+                            //This is where you would put a success callback
+                            //console.log(result)
+                            var message = jsonParser(result);
+                            $('#sample-text').html(message)
+                            //$('#sample-text').html(result.data.body);
+                            $('#sample-result').html('<hr/><font color="blue">読み込み成功</font><hr/>');
+                        }).catch(function (result) {
+                            //This is where you would put an error callback
+                            $( '#sample-result' ).html( '<font color="red">読み込みNG</font>' );
+                        });
+
+                }
+            );
+            $('#clear').click(function () {
+                $('#sample-text').html('');
+                $('#sample-result').html('');
+            });
+        });
+        function jsonParser(res) {
+            var message = res.data.statusCode;
+            message = message + '<br/>';
+            message = message + res.data.body;
+            return message;
+        }
+    </script>
+</head>
+
+<body>
+    <div style="text-align:center;">
+        <h3>Demo: API Gateway Call using APIGateway SDK</h3>
+        <p>
+            <!-- <input type="button" id="ajax-button2" value="読み込む"/> -->
+            <button class="pure-button pure-button-primary" id="ajax-button">API Call</button>
+            <button class="pure-button pure-button-primary" id="clear">clear</button>
+            <!-- <input type="button" id="clear2" value="clear2" onclick="OnButtonClick"/> -->
+            <br />
+        </p>
+        <div id="sample-result"></div>
+        <div id="sample-text"></div>
+    </div>
+
+</body>
+
+</html>
