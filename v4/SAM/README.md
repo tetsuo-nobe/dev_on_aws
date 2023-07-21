@@ -142,6 +142,7 @@ sam build
   - `AWS Region` には、`ap-northeast-1` を入力して下さい。
   - その後は、**下記以外は、デフォルトのまま Enter キーを押下**して下さい。
   - `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]:` には、**`y`** を入力して下さい。 
+  - `Deploy this changeset? [y/N]:` にも、**y** を入力して下さい 
 
 
         
@@ -184,7 +185,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 - ブラウザに `{"message": "hello world"}` と表示されることを確認して下さい。
 
 
-13. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。
+13. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。`00` 部分はご自分の番号に置換えて下さい。**
 
         sam remote invoke --stack-name sam-app00 --region ap-northeast-1
 
