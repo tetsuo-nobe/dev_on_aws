@@ -78,6 +78,7 @@
   - partQL を使用した項目の取得
 * upate_item.py
   - プライマリキーを指定した条件付きの項目の更新
+  - ReturnValues パラメータに指定できる値は、[こちら](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb/client/update_item.html)
 * add_gsi.py
   - グローバルセカンダリインデックスの作成
 * query_gsi.py
