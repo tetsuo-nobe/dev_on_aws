@@ -82,7 +82,7 @@ apple の価格:200
 1. Cloud9 画面左側から AWS アイコンまたは AWS タブをクリックします。
    - AWS IDE Toolkit の AWS Explorer が表示されます。
    - ![s1](https://dev.nobelabo.net/images/github/s1.png)
-2. Cloud9 画面右下側から `AWS:profile:default` をクリックします。
+2. Cloud9 画面左下側から `AWS:profile:default` をクリックします。
    - 接続に使用するプロファイルやロールの一覧を表示して、`profile:default` をクリックします。
    - ![s2](https://dev.nobelabo.net/images/github/s2.png)
    - ![s3](https://dev.nobelabo.net/images/github/s3.png)
