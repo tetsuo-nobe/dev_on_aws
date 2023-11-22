@@ -7,32 +7,11 @@
 2. Cloud9 のページを表示して 用意された環境を開いてください。
   - このサンプルでは Cloud9 の Managed temporary credentials を無効化する必要はありません。
 
-3. Python のバージョンを 3.7 から 3.9 へアップグレードします。
-  - Cloud9 の画面下部のターミナルで次のコマンドを実行します。
-  ```
-  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-  cat << 'EOT' >> ~/.bashrc
-  export PATH="$HOME/.pyenv/bin:$PATH"
-  eval "$(pyenv init -)"
-  EOT
-  source ~/.bashrc
-  sudo yum -y update
-  sudo yum -y install bzip2-devel
-  sudo yum -y install xz-devel
-  pyenv install 3.9.13
-  pyenv global 3.9.13
+
+3. Cloud9 の画面下部のターミナルで次のコマンドを実行し、Python のバージョンが 3.8 以上であることを確認します。
   
   ```
-
-  - 次に PATH を設定します。
-  ```
-  export PATH="$HOME/.pyenv/shims:$PATH"
-  ```
-
-  - Python のバージョンを確認して、AWS SDK for Python (boto3) をインストールします。
-  ```
   python --version
-  pip install boto3
   ```
 
 ## Cloud9 でサンプルのプログラムを動かしてみよう
