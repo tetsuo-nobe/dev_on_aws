@@ -67,7 +67,7 @@
         
 
 4. アプリケーションのテンプレートを選択します。このワークでは、1 の Hello World Example を選択します。
-        ```
+
         Choose an AWS Quick Start application template
                 1 - Hello World Example
                 2 - Hello World Example with Powertools for AWS Lambda
@@ -77,8 +77,7 @@
                 6 - Serverless Connector Hello World Example
                 7 - Multi-step workflow with Connectors
         Template: 1
-        ```
-
+        
 6. AWS X-Ray によるトレース取得の有効化または無効化を指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。
 
         
