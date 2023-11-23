@@ -54,7 +54,7 @@
 2. SAM のリソースを作成します。このワークでは Python の Lambda 関数を作成します。
 
         
-        sam init --runtime python3.7
+        sam init --runtime python3.8
         
 
 3. テンプレートを選択します。このワークでは、1 の AWS Quick Start Templatesを選択します。
@@ -101,7 +101,7 @@
         Project name [sam-app]: sam-app00
         ```
 
-8. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。
+8. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。(**`00` 部分はご自分の番号に置換えて下さい。**)
 
     - SAM テンプレート
       - sam-app00/template.yaml 
@@ -111,7 +111,7 @@
         ```
         - 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
 
-    - デプロイする Lambda 関数
+    - デプロイする Lambda 関数 (**`00` 部分はご自分の番号に置換えて下さい。**)
       - sam-app00/hello_world/app.py
         - デフォルトで **{message: hello world}** という JSON を返します。必要に応じて変更します。　
 9. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
@@ -185,7 +185,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 - ブラウザに `{"message": "hello world"}` と表示されることを確認して下さい。
 
 
-13. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。`00` 部分はご自分の番号に置換えて下さい。**
+13. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えて下さい。**
 
         sam remote invoke --stack-name sam-app00 --region ap-northeast-1
 
