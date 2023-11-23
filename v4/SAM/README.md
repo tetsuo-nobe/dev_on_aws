@@ -92,9 +92,14 @@
 7. Amazon CloudWatch Application Insights によるモニタリングを指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。  
         
         Would you like to enable monitoring using CloudWatch Application Insights?
-        For more info, please view https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html [y/N]: 
+        For more info, please view https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html [y/N]:
+
+8. Lambda 関数で構造化された JSON フォーマットのログの出力を指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。  
+
+        Would you like to set Structured Logging in JSON format on your Lambda functions?  [y/N]:
+   
         
-8. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
+9. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
    
    - 下記は番号に `00` を付けた場合の例です。
    - **以後は `00` 部分はご自分の番号に置換えて下さい。**
@@ -103,7 +108,7 @@
         Project name [sam-app]: sam-app00
         ```
 
-9. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。(**`00` 部分はご自分の番号に置換えて下さい。**)
+10. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。(**`00` 部分はご自分の番号に置換えて下さい。**)
 
     - SAM テンプレート
       - sam-app00/template.yaml 
@@ -116,7 +121,7 @@
     - デプロイする Lambda 関数 (**`00` 部分はご自分の番号に置換えて下さい。**)
       - sam-app00/hello_world/app.py
         - デフォルトで **{message: hello world}** という JSON を返します。必要に応じて変更します。　
-10. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
+11. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
   -  **`00` 部分はご自分の番号に置換えて下さい。**
 
 ```
@@ -124,7 +129,7 @@ cd sam-app00
 sam build
 ```        
 
-10. SAM を使用しローカルでテストします。
+12. SAM を使用しローカルでテストします。
   - (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
   ```
     sam local invoke 
@@ -133,7 +138,7 @@ sam build
   ```
   {"statusCode": 200, "body": "{\"message\": \"hello world\"}`
   ```
-11. sam deploy --guided を使用してデプロイを行います。
+13. sam deploy --guided を使用してデプロイを行います。
   - sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
         
         sam deploy --guided
@@ -177,7 +182,7 @@ sam build
         sam deploy 
         ```
 
-12. デプロイの完了後、**Outputs** に下記のような API の URL が表示されることを確認して、ブラウザの新しいタブでアクセスします。
+14. デプロイの完了後、**Outputs** に下記のような API の URL が表示されることを確認して、ブラウザの新しいタブでアクセスします。
 
 ```
 Key             HelloWorldApi
@@ -187,7 +192,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 - ブラウザに `{"message": "hello world"}` と表示されることを確認して下さい。
 
 
-13. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えて下さい。**
+15. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えて下さい。**
 
         sam remote invoke --stack-name sam-app00 --region ap-northeast-1
 
@@ -197,7 +202,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
         {"statusCode": 200, "body": "{\"message\": \"hello world\"}"}
         
 
-14. SAM で作成したスタックを削除するには、`sam delete` を実行します。
+16. SAM で作成したスタックを削除するには、`sam delete` を実行します。
   - 削除確認の入力が求められるので、`y` を入力して下さい。 
         
         sam delete
