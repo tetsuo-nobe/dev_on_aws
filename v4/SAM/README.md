@@ -67,7 +67,7 @@
         
 
 4. アプリケーションのテンプレートを選択します。このワークでは、1 の Hello World Example を選択します。
-
+        ```
         Choose an AWS Quick Start application template
                 1 - Hello World Example
                 2 - Hello World Example with Powertools for AWS Lambda
@@ -77,8 +77,9 @@
                 6 - Serverless Connector Hello World Example
                 7 - Multi-step workflow with Connectors
         Template: 1
+        ```
 
-5. AWS X-Ray によるトレース取得の有効化または無効化を指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。
+6. AWS X-Ray によるトレース取得の有効化または無効化を指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。
 
         
         Based on your selections, the only Package type available is Zip.
@@ -89,12 +90,12 @@
 
         Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: 
         
-6. Amazon CloudWatch Application Insights によるモニタリングを指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。  
+7. Amazon CloudWatch Application Insights によるモニタリングを指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。  
         
         Would you like to enable monitoring using CloudWatch Application Insights?
         For more info, please view https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html [y/N]: 
         
-7. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
+8. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
    
    - 下記は番号に `00` を付けた場合の例です。
    - **以後は `00` 部分はご自分の番号に置換えて下さい。**
@@ -103,7 +104,7 @@
         Project name [sam-app]: sam-app00
         ```
 
-8. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。(**`00` 部分はご自分の番号に置換えて下さい。**)
+9. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。(**`00` 部分はご自分の番号に置換えて下さい。**)
 
     - SAM テンプレート
       - sam-app00/template.yaml 
@@ -116,7 +117,7 @@
     - デプロイする Lambda 関数 (**`00` 部分はご自分の番号に置換えて下さい。**)
       - sam-app00/hello_world/app.py
         - デフォルトで **{message: hello world}** という JSON を返します。必要に応じて変更します。　
-9. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
+10. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
   -  **`00` 部分はご自分の番号に置換えて下さい。**
 
 ```
