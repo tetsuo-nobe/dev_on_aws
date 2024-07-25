@@ -6,29 +6,32 @@ from botocore.exceptions import NoCredentialsError,ClientError
 def s3_resource():
     # デフォルトのプロファイルのアクセスキーIDを使用 
     # (環境変数AWS_ACCESS_KEY_IDとAWS_SECRET_ACCESS_KEYがある場合は、環境変数の値が優先される)
-    s3 = boto3.resource('s3')
-    for bucket in s3.buckets.all():
-        print(bucket.name)
+    s3client = boto3.client('s3')
+    response = s3client.list_buckets()     # S3クライアントから全てのバケットを取得
+    for bucket in response['Buckets']:     # バケットの表示   
+        print(f'bucket={bucket["Name"]}')
 
     print('------------------------------------------')
 
     # コードで指定したアクセスキーIDを使用（推奨しません）
-    session = Session(aws_access_key_id='<YOUR ACCESS KEY ID>',
-                      aws_secret_access_key='<YOUR SECRET ACCESS KEY>',
-                      region_name='<REGION_NAME')
-    s3 = session.resource('s3')
-    for bucket in s3.buckets.all():
-        print(bucket.name)
+    session = Session(aws_access_key_id='<Your ACCESS KEY ID>',
+                      aws_secret_access_key='<Your SECRET ACCESS KEY>',
+                      region_name='ap-northeast-1')
+    s3client = session.client('s3')
+    response = s3client.list_buckets()     # S3クライアントから全てのバケットを取得
+    for bucket in response['Buckets']:     # バケットの表示   
+        print(f'bucket={bucket["Name"]}')
     
     print('------------------------------------------')
 
     # デフォルト以外のプロファイルを使用
-    profile = '<YOUR PROFILE NAME>'
+    profile = '<Your Profile Name>'
     session = Session(profile_name=profile)
 
-    s3 = session.resource('s3')
-    for bucket in s3.buckets.all():
-        print(bucket.name)
+    s3client = session.client('s3')
+    response = s3client.list_buckets()     # S3クライアントから全てのバケットを取得
+    for bucket in response['Buckets']:     # バケットの表示   
+        print(f'bucket={bucket["Name"]}')
 
     print('------------------------------------------')
 
