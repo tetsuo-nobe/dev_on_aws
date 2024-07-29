@@ -199,15 +199,15 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
         {"statusCode": 200, "body": "{\"message\": \"hello world\"}"}
         
 
-16. SAM で作成したスタックを削除するには、`sam delete` を実行します。
+16. sam_app00/hello_world/app.py を開き、Lambda 関数が return する "hello world" の部分を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えて下さい。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認して下さい。また、前の手順と同じように`sam remote invoke` も実行してください。
+
+        sam deploy 
+
+
+17. SAM で作成したスタックを削除するには、`sam delete` を実行します。
   - 削除確認の入力が 2 回求められるので、`y` を入力して下さい。 
         
         sam delete
-
- 
-17. sam_app00/hello_world/app.py を開き、Lambda 関数が return する "hello world" の部分を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えて下さい。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認して下さい。
-
-        sam deploy 
 
 * 以上でワークは終了です。お疲れ様でした！
 
