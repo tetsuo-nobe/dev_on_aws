@@ -54,7 +54,7 @@
 2. SAM のリソースを作成します。このワークでは Python の Lambda 関数を作成します。
 
         
-        sam init --runtime python3.8
+        sam init --runtime python3.11
         
 
 3. テンプレートを選択します。このワークでは、1 の AWS Quick Start Templatesを選択します。
@@ -121,12 +121,12 @@
     - デプロイする Lambda 関数 (**`00` 部分はご自分の番号に置換えて下さい。**)
       - sam-app00/hello_world/app.py
         - デフォルトで **{message: hello world}** という JSON を返します。このワークではこのままにします。　
-11. SAM でサーバーレスアプリケーションを構築してテストやデプロイする前準備を行います。
+11. SAM でサーバーレスアプリケーションのビルドを行い、依存性を解決し、テストやデプロイする前準備を行います。
   -  **`00` 部分はご自分の番号に置換えて下さい。**
 
 ```
 cd sam-app00
-sam build
+sam build  --use-container
 ```        
 
 12. SAM を使用しローカルでテストします。
