@@ -207,9 +207,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
  
 17. sam_app00/hello_world/app.py を開き、Lambda 関数が return する "hello world" の部分を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えて下さい。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認して下さい。
 
-        ```
         sam deploy 
-        ```
 
 * 以上でワークは終了です。お疲れ様でした！
 
