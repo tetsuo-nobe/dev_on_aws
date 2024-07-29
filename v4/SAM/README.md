@@ -150,22 +150,24 @@ sam build  --use-container
         Configuring SAM deploy
         ======================
 
-        Looking for config file [samconfig.toml] :  Not found
+        Looking for config file [samconfig.toml] :  Found
+        Reading default arguments  :  Success
 
         Setting default arguments for 'sam deploy'
         =========================================
-        Stack Name [sam-app]: sam-app99
-        AWS Region [ap-northeast-1]: 
+        Stack Name [sam-app99]: 
+        AWS Region [us-east-1]: ap-northeast-1
         #Shows you resources changes to be deployed and require a 'Y' to initiate deploy
-        Confirm changes before deploy [y/N]: 
+        Confirm changes before deploy [Y/n]: 
         #SAM needs permission to be able to create roles to connect to the resources in your template
         Allow SAM CLI IAM role creation [Y/n]: 
         #Preserves the state of previously provisioned resources when an operation fails
         Disable rollback [y/N]: 
-        HelloWorldFunction may not have authorization defined, Is this okay? [y/N]: y
+        HelloWorldFunction has no authentication. Is this okay? [y/N]: y
         Save arguments to configuration file [Y/n]: 
         SAM configuration file [samconfig.toml]: 
         SAM configuration environment [default]: 
+
 
         (以下略)
         
