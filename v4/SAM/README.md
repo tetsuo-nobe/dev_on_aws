@@ -118,6 +118,7 @@
 cd sam-app00
 ```
 
+  - ( sam build で --use-container オプションを使用する場合 Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
 ```
 sam build  --use-container
 ```        
