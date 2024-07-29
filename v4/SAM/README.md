@@ -34,16 +34,6 @@
 ---
 
 ## AWS SAM を使用した API Gateway の API + Lambda 関数の作成
-
-* SAM CLI を更新します。
-
-        mkdir tmp && cd tmp
-        wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
-        unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
-        sudo ./sam-installation/install --update
-        cd ..
-        rm -rf tmp
-
       
 1. Cloud9 のターミナルで下記を実行して SAM のバージョンが `1.90.0` 以上であることを確認して下さい。
 
@@ -126,6 +116,9 @@
 
 ```
 cd sam-app00
+```
+
+```
 sam build  --use-container
 ```        
 
