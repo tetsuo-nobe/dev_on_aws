@@ -186,6 +186,7 @@ Description     API Gateway endpoint URL for Prod stage for Hello World function
 Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod/hello/                                              
 ```
 - ブラウザに `{"message": "hello world"}` と表示されることを確認して下さい。
+- マネジメントコンソールで、Lambda 関数がデプロイされ、API Gateway の API と統合されていることを確認して下さい。
 
 
 15. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えて下さい。**
