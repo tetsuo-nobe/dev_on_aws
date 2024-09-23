@@ -1,0 +1,9 @@
+★オリジナルはカックさんデモ
+https://github.com/kakakakakku/yosyosh-training-jupyter-notebooks/blob/master/developing33/mod6_dynamodb_exceeded_exception.ipynb
+
+テーブルのRCUを1で作成しておく
+step2では自動再試行されるので、例外は発生しない
+step3では、自動再試行を0回に設定しているので、例外が発生する
+
+https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/Programming.Errors.html
+https://botocore.amazonaws.com/v1/documentation/api/latest/reference/config.html
