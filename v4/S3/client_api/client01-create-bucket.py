@@ -8,7 +8,7 @@ from mybucket import bucket_name as bucket
 def create_bucket():
     s3client = boto3.client('s3')       # S3クライアント取得
     create_bucket_config = {}           # バケットの構成を作成
-    create_bucket_config["LocationConstraint"] = "ap-northeast-1"  # リージョンの指定
+    create_bucket_config["LocationConstraint"] = "ap-northeast-1"  # リージョンの指定(us-east-1以外の場合は指定する）
     s3client.create_bucket(Bucket=bucket, CreateBucketConfiguration=create_bucket_config)  # バケットの作成
     waiter = s3client.get_waiter('bucket_exists')
     waiter.wait(Bucket=bucket)
