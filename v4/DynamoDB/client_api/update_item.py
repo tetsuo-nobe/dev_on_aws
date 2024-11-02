@@ -14,7 +14,7 @@ from boto3.dynamodb.types import TypeDeserializer
 def update_left(p_userId,p_gameId,p_life):
     
     ddbClient = boto3.client('dynamodb')
-    # クエリー発行
+    # update_item 発行
     try:
         response = ddbClient.update_item(
             TableName=table_name,
