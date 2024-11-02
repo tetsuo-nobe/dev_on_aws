@@ -1,6 +1,6 @@
 '''
-  query を使用した項目の取得
-  userId(パーティションキー)の値を指定して該当する項目を取得する
+  update_item を使用した項目の更新
+  score が 3000 以上であれば、life を 1 つ増加する
 '''
 import boto3
 import botocore
