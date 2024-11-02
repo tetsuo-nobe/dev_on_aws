@@ -14,7 +14,7 @@ from boto3.dynamodb.types import TypeDeserializer
 def get_all_attributes(p_userId,p_gameId):
     
     ddbClient = boto3.client('dynamodb')
-    # クエリー発行
+    # get_item 発行
     response = ddbClient.get_item(
             TableName = table_name,
             Key       = {
@@ -28,7 +28,7 @@ def get_all_attributes(p_userId,p_gameId):
 def get_all_attributes_consistent_read(p_userId,p_gameId):
     
     ddbClient = boto3.client('dynamodb')
-    # クエリー発行
+    # get_item 発行
     response = ddbClient.get_item(
             TableName = table_name,
             Key       = {
@@ -42,7 +42,7 @@ def get_all_attributes_consistent_read(p_userId,p_gameId):
 def get_selected_attributes(p_userId,p_gameId):
     
     ddbClient = boto3.client('dynamodb')
-    # クエリー発行
+    # get_item 発行
     response = ddbClient.get_item(
             TableName = table_name,
             Key       = {
