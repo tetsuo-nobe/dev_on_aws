@@ -8,7 +8,7 @@ from  myconfig import table_name
 # テーブルを削除する関数
 def delete_table():
     ddbClient = boto3.client('dynamodb')
-    # テーブル作成
+    # テーブル削除
     table = ddbClient.delete_table(
         TableName=table_name
     )
