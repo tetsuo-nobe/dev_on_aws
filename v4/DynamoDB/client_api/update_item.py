@@ -1,6 +1,6 @@
 '''
   update_item を使用した項目の更新
-  score が 3000 以上であれば、life を 1 つ増加する
+  userId が 3 で gameId が G001 のゲームの score が 3000 以上であれば、life を 1 つ増加する
 '''
 import boto3
 import botocore
