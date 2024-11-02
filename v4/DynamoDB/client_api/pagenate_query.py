@@ -10,7 +10,7 @@ import decimal
 from boto3.dynamodb.conditions import Key, Attr
 from boto3.dynamodb.types import TypeDeserializer
 
-# query を実行してページ単位で項目を表示する関数
+# ページ単位で項目を表示する関数
 def query_with_pagenate(pageSize,p_userId):
     
     ddbClient = boto3.client('dynamodb')
