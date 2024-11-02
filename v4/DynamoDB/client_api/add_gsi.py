@@ -1,5 +1,5 @@
 '''
-  グローバルセカンダリインデックス作成
+  グローバルセカンダリインデックス(GSI)作成
   ゲームのスコア情報を管理するテーブル。パーティションキー gameId, ソートキー score
 '''
 import boto3
@@ -8,10 +8,10 @@ import time
 from  myconfig import table_name
 from  myconfig import index_name
 
-# テーブルを作成する関数
+# GSI を作成する関数
 def create_gsi():
     ddbClient = boto3.client('dynamodb')
-    # テーブル作成
+    # GSI 作成
     table = ddbClient.update_table(
         TableName=table_name,
         GlobalSecondaryIndexUpdates=[
