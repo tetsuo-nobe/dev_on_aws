@@ -7,11 +7,11 @@ import botocore
 from  myconfig import table_name
 
 
-# PartiQL のクエリーを実行する関数
+# delete_item を実行する関数
 def delete_score_item(p_userId,p_gameId):
     
     ddbClient = boto3.client('dynamodb')
-    # クエリー発行
+    # delete_item 発行
     ddbClient.delete_item(
         TableName = table_name,
         Key       = {
