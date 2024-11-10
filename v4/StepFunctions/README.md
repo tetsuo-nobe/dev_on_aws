@@ -6,7 +6,7 @@
 
 ## 手順
 
-1. Amazon State Language (ASL) の編集
+1. Amazon States Language (ASL) の編集
    - このリポジトリにある WorkStateMachine.json のコードを使用している PC のテキストエディタに貼り付け
    - `000000000000` を講師の指定する AWS アカウント ID に置き換え
      
