@@ -34,7 +34,8 @@
           "Next": "Parallel"
         }
       ],
-      "Default": "Other-Loan-Recommendations"
+      "Default": "Other-Loan-Recommendations",
+      "OutputPath": "$.Loan"
     },
     "Other-Loan-Recommendations": {
       "Type": "Task",
