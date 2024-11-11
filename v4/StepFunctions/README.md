@@ -64,7 +64,7 @@
        - **Type** の内容を確認
        - **Choice** や **Default** の内容を確認
          - ここでは、`"Variable": "$.Result.Payload.body"` の値が `Passed` の場合 `Parallel` ステートに分岐し、それ以外の場合は `Other-Loan-Recommendations` ステートに進むことが定義されています。
-     　- **OutputPath** の内容を確認
+         - **OutputPath** の内容を確認
          - ここでは、このステートの出力結果を、"$.Loan" だけに限定することを指定しています。（デフォルトでは入力値がすべて出力値になります。） 
      - **状態の入力** タブをクリック
        - **Loan-Screening** ステートの出力が表示されていることを確認
