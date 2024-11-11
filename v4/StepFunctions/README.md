@@ -65,7 +65,7 @@
        - **Choice** や **Default** の内容を確認
          - ここでは、`"Variable": "$.Result.Payload.body"` の値が `Passed` の場合 `Parallel` ステートに分岐し、それ以外の場合は `Other-Loan-Recommendations` に進むことが定義されています。
      - **状態の入力** タブをクリック
-       - ステートマシン実行時に入力したパラメータが表示されていることを確認
+       - **Loan-Screening** ステートの出力が表示されていることを確認
      - **状態の出力** タブをクリック
        - Result 要素に Lambda の実行結果である `"statusCode": 200` や `"body": "Failed"` が存在することを確認
        - ステートマシン実行時に入力したパラメータも出力結果に含まれていることを確認
