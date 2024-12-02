@@ -82,6 +82,9 @@
      - - **状態の入力** タブをクリック
        - **Choice** ステートの出力が表示されていることを確認
    - 実行結果のページで **Event view** や **State view** を切り替えて内容を確認
+#### 参考
+* 時間があれば、下記の外部記事(DeveloperIO produced by Classmethod)もご参照ください。
+  - [[アップデート] AWS Step Functions で変数が使えるようになりました](https://dev.classmethod.jp/articles/step-functions-variables/)
 ---
 
 * WorkStateMachine.json
