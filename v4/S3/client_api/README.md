@@ -35,9 +35,9 @@
   ```
 
 4. 以後、講師の解説をききながらサンプルを実行して下さい。
-  - 例: client-bucket-exist-check.py を実行する場合
+  - 例: client01-create-bucket.py を実行する場合
   ```
-  python  client-bucket-exist-check.py
+  python3  create-bucket.py
   ```
 
 ## クライアント API を使用するサンプル
