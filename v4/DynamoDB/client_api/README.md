@@ -16,7 +16,7 @@
 
 1. VS Code Server の画面下部のターミナルで次のコマンドを実行します。
   - `git clone` コマンドで GitHub リポジトリから AWS SDK for Python (boto3) のサンプルを取得します。
-  - `git` コマンドは Cloud9 に組み込まれています。
+  - `git` コマンドは VS Code Server に組み込まれています。
   ```
   git clone https://github.com/tetsuo-nobe/dev_on_aws
   ```
