@@ -16,7 +16,7 @@
 
 1. VS Code Server の画面下部のターミナルで次のコマンドを実行します。
   - `git clone` コマンドで GitHub リポジトリから AWS SDK for Python (boto3) のサンプルを取得します。
-  - `git` コマンドは Cloud9 に組み込まれています。
+  - `git` コマンドは VS Code Server に組み込まれています。
   ```
   git clone https://github.com/tetsuo-nobe/dev_on_aws
   ```
@@ -27,7 +27,7 @@
   cd  dev_on_aws/v4/S3/client_api
   ```
 
-3. Cloud9 の左側のナビゲーターより、**dev_on_aws/v4/S3/client_api/mybucket.py** を開きます。
+3. VS Code Server の左側のナビゲーターより、**dev_on_aws/v4/S3/client_api/mybucket.py** を開きます。
   - bucket_name に、このワーク用のバケット名を指定します。
   - バケット名はユニークにしてください。(下記は例です。) **大文字やアンダースコアは使用できません。**
   ```
