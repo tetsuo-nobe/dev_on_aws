@@ -82,7 +82,7 @@
    - **グラフビュー** で **Choice** の次のステートをクリック
      - - **入力/出力** タブをクリックして、**状態の入力** の内容を確認
        - **Choice** ステートの出力が表示されていることを確認
-   - 実行結果のページで **Event view** や **State view** を切り替えて内容を確認
+   - ページの下部で **Event view** や **State view** を切り替えて内容を確認
 #### 参考
 * 時間があれば、下記の外部記事(DeveloperIO produced by Classmethod)もご参照ください。
   - [[アップデート] AWS Step Functions で変数が使えるようになりました](https://dev.classmethod.jp/articles/step-functions-variables/)
