@@ -14,7 +14,7 @@
       ```
 1. AWS SAM CLI のコマンドで Step Functions のワークフローから呼び出す Lambda 関数を作成します。
     - ```
-      cd dev_on_aws/v4/StepFunctions
+      cd dev_on_aws/v4/StepFunctions/sfn-Loan
 
       sam build --use-container
 
