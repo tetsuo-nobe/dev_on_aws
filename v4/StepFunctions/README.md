@@ -21,7 +21,7 @@
       sam deploy --guided
       
       ```
-
+* sam deploy --guided 実行後、Stack Name には任意の名前を AWS Region に使用するリージョンを指定して下さい。それ以外はデフォルトの設定で問題ありません。
 
 ## 手順
 
