@@ -10,6 +10,7 @@ Globals:
   Function:
     Timeout: 3
     MemorySize: 128
+    Runtime: python3.14
 
 Resources:
   LoanScreening:
@@ -18,7 +19,6 @@ Resources:
       FunctionName: sfn-Loan-Screening
       CodeUri: sfn-Loan-Screening/
       Handler: app.lambda_handler
-      Runtime: python3.8
       Architectures:
         - x86_64
   DepositIntoAccount:
@@ -27,7 +27,6 @@ Resources:
       FunctionName: sfn-Deposit-into-Account
       CodeUri: sfn-Deposit-into-Account/
       Handler: app.lambda_handler
-      Runtime: python3.8
       Architectures:
         - x86_64
   NoticeOfPassed:
@@ -36,7 +35,6 @@ Resources:
       FunctionName: sfn-Notice-of-Passed
       CodeUri: sfn-Notice-of-Passed/
       Handler: app.lambda_handler
-      Runtime: python3.8
       Architectures:
         - x86_64
   NoticeOfFailed:
@@ -45,7 +43,6 @@ Resources:
       FunctionName: sfn-Notice-of-Failed
       CodeUri: sfn-Notice-of-Failed/
       Handler: app.lambda_handler
-      Runtime: python3.8
       Architectures:
         - x86_64
   OtherLoanRecommendations:
@@ -54,7 +51,6 @@ Resources:
       FunctionName: sfn-Other-Loan-Recommendations
       CodeUri: sfn-Other-Loan-Recommendations/
       Handler: app.lambda_handler
-      Runtime: python3.8
       Architectures:
         - x86_64
 
