@@ -4,6 +4,25 @@
 
 ---
 
+## 準備
+
+1. マネジメントコンソールへアクセスします。
+1. CloudShell を開きます。
+1. CloudShellから下記のコマンドでこのリポジトリをクローンします。
+    - ```
+      git clone 
+      ```
+1. AWS SAM CLI のコマンドで Step Functions のワークフローから呼び出す Lambda 関数を作成します。
+    - ```
+      cd dev_on_aws/v4/StepFunctions
+
+      sam build --use-container
+
+      sam deploy
+      
+      ```
+
+
 ## 手順
 
 1. Amazon States Language (ASL) の編集
