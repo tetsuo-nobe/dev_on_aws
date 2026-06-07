@@ -10,7 +10,7 @@
 1. CloudShell を開きます。
 1. CloudShellから下記のコマンドでこのリポジトリをクローンします。
     - ```
-      git clone 
+      git clone https://github.com/tetsuo-nobe/dev_on_aws.git
       ```
 1. AWS SAM CLI のコマンドで Step Functions のワークフローから呼び出す Lambda 関数を作成します。
     - ```
