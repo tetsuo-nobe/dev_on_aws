@@ -16,7 +16,7 @@
     - ```
       cd dev_on_aws/v4/StepFunctions/sfn-Loan
 
-      sam build --use-container
+      sam build
 
       sam deploy --guided
       
