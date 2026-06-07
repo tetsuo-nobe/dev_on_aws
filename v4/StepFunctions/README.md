@@ -18,7 +18,7 @@
 
       sam build --use-container
 
-      sam deploy
+      sam deploy --guided
       
       ```
 
