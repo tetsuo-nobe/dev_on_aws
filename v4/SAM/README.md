@@ -112,8 +112,13 @@
 
     - デプロイする Lambda 関数 (**`00` 部分はご自分の番号に置換えて下さい。**)
       - sam-app00/hello_world/app.py
-        - デフォルトで **{message: hello world}** という JSON を返します。このワークではこのままにします。　
-11. SAM でサーバーレスアプリケーションのビルドを行い、依存性を解決し、テストやデプロイする前準備を行います。
+        - デフォルトで **{message: hello world}** という JSON を返します。このワークではこのままにします。
+
+11. sam-app00/hello_world/requirements.txt を開きます。
+    - `request` の記載を `pymysql` に書き換えます。
+    - **これにより、SAM のビルド時に pymysql パッケージが関数に取り込まれ、デプロイ時に関数コードと一緒にまとめてデプロイできます。**
+
+12. SAM でサーバーレスアプリケーションのビルドを行い、依存性を解決し、テストやデプロイする前準備を行います。
   -  **`00` 部分はご自分の番号に置換えて下さい。**
 
 ```
@@ -132,7 +137,7 @@ sam validate
 sam build  --use-container
 ```        
 
-12. SAM を使用しローカルでテストします。
+13. SAM を使用しローカルでテストします。
   - (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
   ```
     sam local invoke 
@@ -141,7 +146,7 @@ sam build  --use-container
   ```
   {"statusCode": 200, "body": "{\"message\": \"hello world\"}`
   ```
-13. sam deploy --guided を使用してデプロイを行います。
+14. sam deploy --guided を使用してデプロイを行います。
   - sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
         
         sam deploy --guided
@@ -187,7 +192,7 @@ sam build  --use-container
         sam deploy 
         ```
 
-14. デプロイの完了後、**Outputs** に下記のような API の URL が表示されることを確認して、ブラウザの新しいタブでアクセスします。
+15. デプロイの完了後、**Outputs** に下記のような API の URL が表示されることを確認して、ブラウザの新しいタブでアクセスします。
 
 ```
 Key             HelloWorldApi
@@ -198,7 +203,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 - マネジメントコンソールで、Lambda 関数がデプロイされ、API Gateway の API と統合されていることを確認して下さい。
 
 
-15. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えて下さい。**
+16. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えて下さい。**
 
         sam remote invoke --stack-name sam-app00 --region ap-northeast-1
 
@@ -208,14 +213,14 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
         {"statusCode": 200, "body": "{\"message\": \"hello world\"}"}
         
 
-16. sam_app00/hello_world/app.py を開き、Lambda 関数が return する "hello world" の部分を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えて下さい。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認して下さい。また、前の手順と同じように`sam remote invoke` も実行してください。
+17. sam_app00/hello_world/app.py を開き、Lambda 関数が return する "hello world" の部分を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えて下さい。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認して下さい。また、前の手順と同じように`sam remote invoke` も実行してください。
 
         sam build --use-container
 
         sam deploy 
 
 
-17. SAM で作成したスタックを削除するには、`sam delete` を実行します。
+18. SAM で作成したスタックを削除するには、`sam delete` を実行します。
   - 削除確認の入力が 2 回求められるので、`y` を入力して下さい。 
         
         sam delete
