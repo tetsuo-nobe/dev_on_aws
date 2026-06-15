@@ -37,7 +37,7 @@
 
 ## AWS SAM を使用した API Gateway の API + Lambda 関数の作成
       
-1. Cloud9 のターミナルで下記を実行して SAM のバージョンが `1.90.0` 以上であることを確認して下さい。
+1. Cloud9 のターミナルで下記を実行して SAM のバージョンが `1.90.0` 以上であることを確認してください。
 
         
         sam --version
@@ -91,26 +91,26 @@
         Would you like to set Structured Logging in JSON format on your Lambda functions?  [y/N]:
    
         
-9. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けて下さい。**
+9. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けてください。**
    
    - 下記は番号に `00` を付けた場合の例です。
-   - **以後は `00` 部分はご自分の番号に置換えて下さい。**
+   - **以後は `00` 部分はご自分の番号に置換えてください。**
 
         ```
         Project name [sam-app]: sam-app00
         ```
 
-10. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。(**`00` 部分はご自分の番号に置換えて下さい。**)
+10. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。(**`00` 部分はご自分の番号に置換えてください。**)
 
     - SAM テンプレート
       - sam-app00/template.yaml 
-        - 上記ファイルに HelloWorldFunction のプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けて下さい。**
+        - 上記ファイルに HelloWorldFunction のプロパティに下記を追記して関数名を明示的に指定します。**`HelloWorldFunction` の後にご自分の番号を付けてください。**
         ```
         FunctionName: HelloWorldFunction00
         ```
         - 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
 
-    - デプロイする Lambda 関数 (**`00` 部分はご自分の番号に置換えて下さい。**)
+    - デプロイする Lambda 関数 (**`00` 部分はご自分の番号に置換えてください。**)
       - sam-app00/hello_world/app.py
         - デフォルトで **{message: hello world}** という JSON を返します。このワークではこのままにします。
 
@@ -119,7 +119,7 @@
     - **これにより、SAM のビルド時に pymysql パッケージが関数に取り込まれ、デプロイ時に関数コードと一緒にまとめてデプロイできます。**
 
 12. SAM でサーバーレスアプリケーションのビルドを行い、依存性を解決し、テストやデプロイする前準備を行います。
-  -  **`00` 部分はご自分の番号に置換えて下さい。**
+  -  **`00` 部分はご自分の番号に置換えてください。**
 
 ```
 cd sam-app00
@@ -153,11 +153,11 @@ sam build  --use-container
         
 
   -  以後、対話的に進めていくと、指定した内容が sam deploy 実行時に必要パラメータとしてファイル（デフォルト: samconfig.toml）保存され、その後デプロイが実行されます。
-  - `Stack Name [sam-app]` には、**`sam-app` にご自分の番号をつけた文字列を入力して下さい。**
-  - `AWS Region` には、`ap-northeast-1` を入力して下さい。
-  - その後は、**下記以外は、デフォルトのまま Enter キーを押下**して下さい。
-  - `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]:` には、**`y`** を入力して下さい。 
-  - `Deploy this changeset? [y/N]:` にも、**y** を入力して下さい 
+  - `Stack Name [sam-app]` には、**`sam-app` にご自分の番号をつけた文字列を入力してください。**
+  - `AWS Region` には、`ap-northeast-1` を入力してください。
+  - その後は、**下記以外は、デフォルトのまま Enter キーを押下**してください。
+  - `HelloWorldFunction may not have authorization defined, Is this okay? [y/N]:` には、**`y`** を入力してください。 
+  - `Deploy this changeset? [y/N]:` にも、**y** を入力してください 
 
 
         
@@ -199,11 +199,11 @@ Key             HelloWorldApi
 Description     API Gateway endpoint URL for Prod stage for Hello World function                                 
 Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod/hello/                                              
 ```
-- ブラウザに `{"message": "hello world"}` と表示されることを確認して下さい。
-- マネジメントコンソールで、Lambda 関数がデプロイされ、API Gateway の API と統合されていることを確認して下さい。
+- ブラウザに `{"message": "hello world"}` と表示されることを確認してください。
+- マネジメントコンソールで、Lambda 関数がデプロイされ、API Gateway の API と統合されていることを確認してください。
 
 
-16. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えて下さい。**
+16. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えてください。**
 
         sam remote invoke --stack-name sam-app00 --region ap-northeast-1
 
@@ -213,7 +213,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
         {"statusCode": 200, "body": "{\"message\": \"hello world\"}"}
         
 
-17. sam_app00/hello_world/app.py を開き、Lambda 関数が return する "hello world" の部分を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えて下さい。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認して下さい。また、前の手順と同じように`sam remote invoke` も実行してください。
+17. sam_app00/hello_world/app.py を開き、Lambda 関数が return する "hello world" の部分を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えてください。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認してください。また、前の手順と同じように`sam remote invoke` も実行してください。
 
         sam build --use-container
 
@@ -227,7 +227,8 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
       ```
 
 18. SAM で作成したスタックを削除するには、`sam delete` を実行します。
-  - 削除確認の入力が 2 回求められるので、`y` を入力して下さい。 
+  - 削除確認の入力が 2 回求められるので、`y` を入力してください。
+  - (参考) y の応答なしで削除する場合は、`--no-prompts` オプションをつけます。
         
         sam delete
 
