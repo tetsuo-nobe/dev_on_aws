@@ -220,6 +220,12 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
         sam deploy 
 
 
+    * イメージを取得するための Disk space が無くてエラーになった場合は、次のコマンドを実行してみてください
+
+      ```
+      docker image prune -a
+      ```
+
 18. SAM で作成したスタックを削除するには、`sam delete` を実行します。
   - 削除確認の入力が 2 回求められるので、`y` を入力して下さい。 
         
