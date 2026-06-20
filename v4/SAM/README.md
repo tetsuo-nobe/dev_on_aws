@@ -35,6 +35,23 @@
 
 ---
 
+## Cloud9 のディスク容量の拡張
+
+- SAM のビルド時に Docker イメージを使用するため、ディスク容量が不足する場合があります。以下の手順でディスク容量を拡張してください。
+
+1. Cloud9 のターミナルで、リサイズ用のスクリプトをダウンロードします。
+   ```
+   wget https://tnobep-work-public.s3.ap-northeast-1.amazonaws.com/sam-work/resize.sh
+   ```
+
+2. スクリプトに実行権限を付与し、実行します（下記の例では 30 GiB に拡張）。
+   ```
+   chmod +x resize.sh
+   ./resize.sh 30
+   ```
+
+---
+
 ## AWS SAM を使用した API Gateway の API + Lambda 関数の作成
       
 1. Cloud9 のターミナルで下記を実行して SAM のバージョンが `1.90.0` 以上であることを確認してください。
@@ -46,7 +63,7 @@
 2. SAM のリソースを作成します。このワークでは Python の Lambda 関数を作成します。
 
         
-        sam init --runtime python3.11
+        sam init --runtime python3.14
         
 
 3. テンプレートを選択します。このワークでは、1 の AWS Quick Start Templatesを選択します。
