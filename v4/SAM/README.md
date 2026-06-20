@@ -178,12 +178,6 @@ sam build  --use-container
   sam local generate-event apigateway aws-proxy > events/event.json
   ```
 
-  - `events` ディレクトリが存在しない場合は、事前に作成してください。
-  ```
-  mkdir events
-  sam local generate-event apigateway aws-proxy > events/event.json
-  ```
-
   **ステップ 2: event.json の内容を確認する**
 
   - 生成された `events/event.json` を開き、API Gateway プロキシ統合のイベント構造を確認します。
@@ -194,11 +188,10 @@ sam build  --use-container
     - `headers`: HTTP ヘッダー
     - `body`: リクエストボディ
 
-  - 例えば、クエリ文字列パラメータを追加したい場合は、以下のようにイベントを生成できます:
+  - 例えば、HTTP メソッドやパスを指定したい場合は、以下のようにオプション付きでイベントを生成できます:
   ```
   sam local generate-event apigateway aws-proxy --method GET --path /hello --body "" > events/event.json
   ```
-
   **ステップ 3: event.json を使用してローカルで Lambda 関数をテストする**
 
   - `--event` (または `-e`) オプションでイベントファイルを指定して、Lambda 関数をローカルで呼び出します。
