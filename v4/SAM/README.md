@@ -147,6 +147,74 @@ sam build  --use-container
   ```
   {"statusCode": 200, "body": "{\"message\": \"hello world\"}`
   ```
+
+### event.json を使用したローカルテスト
+
+  - Lambda 関数に渡すイベントデータを JSON ファイルとして作成し、ローカルテストに使用できます。
+  - これにより、API Gateway からのリクエストをシミュレートしたテストが可能になります。
+
+  **ステップ 1: SAM CLI でサンプルイベントを生成する**
+  
+  - SAM CLI には、各種 AWS サービスのサンプルイベントを生成する機能があります。API Gateway のイベントを生成してファイルに保存します。
+
+  ```
+  sam local generate-event apigateway aws-proxy > events/event.json
+  ```
+
+  - `events` ディレクトリが存在しない場合は、事前に作成してください。
+  ```
+  mkdir events
+  sam local generate-event apigateway aws-proxy > events/event.json
+  ```
+
+  **ステップ 2: event.json の内容を確認する**
+
+  - 生成された `events/event.json` を開き、API Gateway プロキシ統合のイベント構造を確認します。
+  - 主要なフィールドは以下の通りです:
+    - `httpMethod`: HTTP メソッド (GET, POST など)
+    - `path`: リクエストパス
+    - `queryStringParameters`: クエリ文字列パラメータ
+    - `headers`: HTTP ヘッダー
+    - `body`: リクエストボディ
+
+  - 例えば、クエリ文字列パラメータを追加したい場合は、以下のようにイベントを生成できます:
+  ```
+  sam local generate-event apigateway aws-proxy --method GET --path /hello --body "" > events/event.json
+  ```
+
+  **ステップ 3: event.json を使用してローカルで Lambda 関数をテストする**
+
+  - `--event` (または `-e`) オプションでイベントファイルを指定して、Lambda 関数をローカルで呼び出します。
+  ```
+  sam local invoke --event events/event.json
+  ```
+
+  - Lambda 関数の実行結果が表示されます。API Gateway プロキシ統合のイベントが `event` 引数として関数に渡されることを確認してください。
+
+  **ステップ 4: (応用) イベントの内容をカスタマイズしてテストする**
+
+  - `events/event.json` を手動で編集して、さまざまなシナリオをテストできます。
+  - 例えば、POST リクエストのボディ付きイベントを作成する場合:
+  ```
+  sam local generate-event apigateway aws-proxy --method POST --body "{\"name\": \"SAM\"}" > events/event_post.json
+  ```
+
+  - 作成したイベントでテスト:
+  ```
+  sam local invoke --event events/event_post.json
+  ```
+
+  **ステップ 5: (応用) リモートテストでもイベントを使用する**
+
+  - デプロイ後の Lambda 関数に対しても、イベントファイルを指定してリモートテストを実行できます。**`00` 部分はご自分の番号に置換えてください。**
+  ```
+  sam remote invoke --stack-name sam-app00 --region ap-northeast-1 --event-file events/event.json
+  ```
+
+  - これにより、デプロイ済みの関数に対して特定のイベントデータを送信し、動作を確認できます。
+
+---
+
 14. sam deploy --guided を使用してデプロイを行います。
   - sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
         
@@ -256,6 +324,30 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 
   ```
   curl http://127.0.0.1:3000/hello
+  ```
+
+---
+
+## 参考: sam local generate-event で生成できるイベントの種類
+
+- SAM CLI では、さまざまな AWS サービスのイベントをシミュレートできます。利用可能なサービス一覧を確認するには:
+  ```
+  sam local generate-event --help
+  ```
+
+- 代表的なイベントソース:
+  | サービス | コマンド例 | 説明 |
+  |---------|-----------|------|
+  | API Gateway | `sam local generate-event apigateway aws-proxy` | REST API プロキシ統合イベント |
+  | S3 | `sam local generate-event s3 put` | S3 オブジェクト作成イベント |
+  | DynamoDB | `sam local generate-event dynamodb update` | DynamoDB ストリームイベント |
+  | SNS | `sam local generate-event sns notification` | SNS 通知イベント |
+  | SQS | `sam local generate-event sqs receive-message` | SQS メッセージ受信イベント |
+  | CloudWatch Events | `sam local generate-event cloudwatch scheduled-event` | スケジュールイベント |
+
+- 各イベントで指定できるオプションの確認方法:
+  ```
+  sam local generate-event apigateway aws-proxy --help
   ```
 
 
