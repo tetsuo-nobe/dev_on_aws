@@ -87,7 +87,7 @@
                 7 - Multi-step workflow with Connectors
         Template: 1
         
-6. AWS X-Ray によるトレース取得の有効化または無効化を指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。
+5. AWS X-Ray によるトレース取得の有効化または無効化を指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。
 
         
         Based on your selections, the only Package type available is Zip.
@@ -98,17 +98,17 @@
 
         Would you like to enable X-Ray tracing on the function(s) in your application?  [y/N]: 
         
-7. Amazon CloudWatch Application Insights によるモニタリングを指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。  
+6. Amazon CloudWatch Application Insights によるモニタリングを指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。  
         
         Would you like to enable monitoring using CloudWatch Application Insights?
         For more info, please view https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html [y/N]:
 
-8. Lambda 関数で構造化された JSON フォーマットのログの出力を指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。  
+7. Lambda 関数で構造化された JSON フォーマットのログの出力を指定します。このワークでは、そのまま Enter キーを押下して N (無効化)を選択します。  
 
         Would you like to set Structured Logging in JSON format on your Lambda functions?  [y/N]:
    
         
-9. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けてください。**
+8. プロジェクト名を指定します。**`sam-app` の後にご自分の番号を付けてください。**
    
    - 下記は番号に `00` を付けた場合の例です。
    - **以後は `00` 部分はご自分の番号に置換えてください。**
@@ -117,7 +117,7 @@
         Project name [sam-app]: sam-app00
         ```
 
-10. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。(**`00` 部分はご自分の番号に置換えてください。**)
+9. sam-app00 フォルダが作成されるので、下記の内容を確認・編集します。(**`00` 部分はご自分の番号に置換えてください。**)
 
     - SAM テンプレート
       - sam-app00/template.yaml 
@@ -153,12 +153,12 @@
         - これにより、`/hello?name=SAM` のようにアクセスすると `{"message": "hello SAM"}` が返されます。
         - クエリパラメータ `name` を省略した場合は、デフォルトで `{"message": "hello world"}` が返されます。
 
-11. sam-app00/hello_world/requirements.txt を開きます。
+10. sam-app00/hello_world/requirements.txt を開きます。
     - `request` の記載を `pymysql` に書き換えます。
     - **これにより、SAM のビルド時に pymysql パッケージが関数に取り込まれ、デプロイ時に関数コードと一緒にまとめてデプロイできます。**
     - (今回のコードでは実際は pymysql を使用しませんが、**SAM によりパッケージと取込みが容易に行えることを確認して下さい。**）
 
-12. SAM でサーバーレスアプリケーションのビルドを行い、依存性を解決し、テストやデプロイする前準備を行います。
+11. SAM でサーバーレスアプリケーションのビルドを行い、依存性を解決し、テストやデプロイする前準備を行います。
   -  **`00` 部分はご自分の番号に置換えてください。**
 
 ```
@@ -177,14 +177,14 @@ sam validate
 sam build  --use-container
 ```        
 
-13. SAM を使用しローカルでテストします。
+12. SAM を使用しローカルでテストします。
   - (この操作には Docker が必要ですが Cloud9 は Docker を導入済ですので問題ありません。)
   ```
     sam local invoke 
   ```
   - 下記のように Lambda 関数で return している文字列が表示されることを確認します。
   ```
-  {"statusCode": 200, "body": "{\"message\": \"hello world\"}`
+  {"statusCode": 200, "body": "{\"message\": \"hello world\"}"}
   ```
 
 ### event.json を使用したローカルテスト
@@ -222,18 +222,9 @@ sam build  --use-container
   {"statusCode": 200, "body": "{\"message\": \"hello SAM\"}"}
   ```
 
-  **ステップ 4: (応用) リモートテストでもイベントを使用する**
-
-  - デプロイ後の Lambda 関数に対しても、イベントファイルを指定してリモートテストを実行できます。**`00` 部分はご自分の番号に置換えてください。**
-  ```
-  sam remote invoke --stack-name sam-app00 --region ap-northeast-1 --event-file events/event.json
-  ```
-
-  - これにより、デプロイ済みの関数に対して特定のイベントデータを送信し、動作を確認できます。
-
 ---
 
-14. sam deploy --guided を使用してデプロイを行います。
+13. sam deploy --guided を使用してデプロイを行います。
   - sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
         
         sam deploy --guided
@@ -279,7 +270,7 @@ sam build  --use-container
         sam deploy 
         ```
 
-15. デプロイの完了後、**Outputs** に下記のような API の URL が表示されることを確認して、ブラウザの新しいタブでアクセスします。
+14. デプロイの完了後、**Outputs** に下記のような API の URL が表示されることを確認して、ブラウザの新しいタブでアクセスします。
 
 ```
 Key             HelloWorldApi
@@ -290,7 +281,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 - マネジメントコンソールで、Lambda 関数がデプロイされ、API Gateway の API と統合されていることを確認してください。
 
 
-16. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えてください。**
+15. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えてください。**
 
         sam remote invoke --stack-name sam-app00 --region ap-northeast-1
 
@@ -298,9 +289,23 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
   
         
         {"statusCode": 200, "body": "{\"message\": \"hello world\"}"}
-        
 
-17. sam_app00/hello_world/app.py を開き、Lambda 関数が return する "hello world" の部分を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えてください。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認してください。また、前の手順と同じように`sam remote invoke` も実行してください。
+  - 次に、ブラウザで API の URL にクエリパラメータ `name` を付けてアクセスしてみましょう。手順 14 で確認した API の URL の末尾に `?name=あなたの名前` を追加します。
+    - 例: `https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod/hello/?name=Taro`
+  - ブラウザに `{"message": "hello Taro"}` のように、指定した名前が表示されることを確認してください。
+
+
+16. (応用) リモートテストでもイベントを使用する
+
+  - デプロイ後の Lambda 関数に対しても、イベントファイルを指定してリモートテストを実行できます。**`00` 部分はご自分の番号に置換えてください。**
+  ```
+  sam remote invoke --stack-name sam-app00 --region ap-northeast-1 --event-file events/event.json
+  ```
+
+  - これにより、デプロイ済みの関数に対して特定のイベントデータを送信し、動作を確認できます。
+
+
+17. sam-app00/hello_world/app.py を開き、Lambda 関数が return する greeting の文字列（例: `f"hello {name}"` の `hello` 部分）を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えてください。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認してください。また、前の手順と同じように`sam remote invoke` も実行してください。
 
         sam build --use-container
 
@@ -312,6 +317,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
       ```
       docker image prune -a
       ```
+
 
 18. SAM で作成したスタックを削除するには、`sam delete` を実行します。
   - 削除確認の入力が 2 回求められるので、`y` を入力してください。
