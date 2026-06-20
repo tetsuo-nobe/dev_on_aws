@@ -224,6 +224,8 @@ sam build  --use-container
 
 ---
 
+### デプロイ
+
 13. sam deploy --guided を使用してデプロイを行います。
   - sam deploy --guidedを使うと、sam deploy のパラメータをファイルに保存し、以後、容易にデプロイできます。
         
@@ -284,6 +286,10 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
     - 例: `https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod/hello/?name=Taro`
 - ブラウザに `{"message": "hello Taro"}` のように、指定した名前が表示されることを確認してください。
 
+---
+
+### デプロイ後のリモートテスト
+
 15. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えてください。**
 
         sam remote invoke --stack-name sam-app00 --region ap-northeast-1
@@ -316,7 +322,9 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
       ```
       docker image prune -a
       ```
+---
 
+### スタックの削除
 
 18. SAM で作成したスタックを削除するには、`sam delete` を実行します。
   - 削除確認の入力が 2 回求められるので、`y` を入力してください。
