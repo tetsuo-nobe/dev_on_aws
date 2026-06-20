@@ -129,7 +129,29 @@
 
     - デプロイする Lambda 関数 (**`00` 部分はご自分の番号に置換えてください。**)
       - sam-app00/hello_world/app.py
-        - デフォルトで **{message: hello world}** という JSON を返します。このワークではこのままにします。
+        - デフォルトでは **{message: hello world}** という JSON を返すコードになっています。
+        - このワークでは、API Gateway の GET メソッドのクエリパラメータ `name` の値を取得して、`hello <name の値>` を返すようにコードを変更します。
+        - `app.py` を開き、`lambda_handler` 関数の内容を以下のように書き換えてください:
+        ```python
+        import json
+
+        def lambda_handler(event, context):
+            # クエリパラメータから name の値を取得
+            params = event.get("queryStringParameters")
+            if params and "name" in params:
+                name = params["name"]
+            else:
+                name = "world"
+
+            return {
+                "statusCode": 200,
+                "body": json.dumps({
+                    "message": f"hello {name}",
+                }),
+            }
+        ```
+        - これにより、`/hello?name=SAM` のようにアクセスすると `{"message": "hello SAM"}` が返されます。
+        - クエリパラメータ `name` を省略した場合は、デフォルトで `{"message": "hello world"}` が返されます。
 
 11. sam-app00/hello_world/requirements.txt を開きます。
     - `request` の記載を `pymysql` に書き換えます。
@@ -168,7 +190,7 @@ sam build  --use-container
 ### event.json を使用したローカルテスト
 
   - Lambda 関数に渡すイベントデータを JSON ファイルとして作成し、ローカルテストに使用できます。
-  - これにより、API Gateway からのリクエストをシミュレートしたテストが可能になります。
+  - これにより、API Gateway からのリクエスト（クエリパラメータ付き）をシミュレートしたテストが可能になります。
 
   **ステップ 1: SAM CLI でサンプルイベントを生成する**
   
@@ -178,20 +200,16 @@ sam build  --use-container
   sam local generate-event apigateway aws-proxy > events/event.json
   ```
 
-  **ステップ 2: event.json の内容を確認する**
+  **ステップ 2: event.json を編集してクエリパラメータを設定する**
 
-  - 生成された `events/event.json` を開き、API Gateway プロキシ統合のイベント構造を確認します。
-  - 主要なフィールドは以下の通りです:
-    - `httpMethod`: HTTP メソッド (GET, POST など)
-    - `path`: リクエストパス
-    - `queryStringParameters`: クエリ文字列パラメータ
-    - `headers`: HTTP ヘッダー
-    - `body`: リクエストボディ
+  - 生成された `events/event.json` を開き、`queryStringParameters` フィールドを探して以下のように編集します:
+  ```json
+  "queryStringParameters": {
+    "name": "SAM"
+  },
+  ```
+  - これにより、`/hello?name=SAM` でアクセスした場合と同じイベントをシミュレートできます。
 
-  - 例えば、HTTP メソッドやパスを指定したい場合は、以下のようにオプション付きでイベントを生成できます:
-  ```
-  sam local generate-event apigateway aws-proxy --method GET --path /hello --body "" > events/event.json
-  ```
   **ステップ 3: event.json を使用してローカルで Lambda 関数をテストする**
 
   - `--event` (または `-e`) オプションでイベントファイルを指定して、Lambda 関数をローカルで呼び出します。
@@ -199,22 +217,12 @@ sam build  --use-container
   sam local invoke --event events/event.json
   ```
 
-  - Lambda 関数の実行結果が表示されます。API Gateway プロキシ統合のイベントが `event` 引数として関数に渡されることを確認してください。
-
-  **ステップ 4: (応用) イベントの内容をカスタマイズしてテストする**
-
-  - `events/event.json` を手動で編集して、さまざまなシナリオをテストできます。
-  - 例えば、POST リクエストのボディ付きイベントを作成する場合:
+  - 下記のように、クエリパラメータ `name` の値が反映された結果が表示されることを確認します:
   ```
-  sam local generate-event apigateway aws-proxy --method POST --body "{\"name\": \"SAM\"}" > events/event_post.json
+  {"statusCode": 200, "body": "{\"message\": \"hello SAM\"}"}
   ```
 
-  - 作成したイベントでテスト:
-  ```
-  sam local invoke --event events/event_post.json
-  ```
-
-  **ステップ 5: (応用) リモートテストでもイベントを使用する**
+  **ステップ 4: (応用) リモートテストでもイベントを使用する**
 
   - デプロイ後の Lambda 関数に対しても、イベントファイルを指定してリモートテストを実行できます。**`00` 部分はご自分の番号に置換えてください。**
   ```
