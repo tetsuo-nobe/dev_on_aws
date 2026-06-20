@@ -280,6 +280,9 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
 - ブラウザに `{"message": "hello world"}` と表示されることを確認してください。
 - マネジメントコンソールで、Lambda 関数がデプロイされ、API Gateway の API と統合されていることを確認してください。
 
+- 次に、ブラウザで API の URL にクエリパラメータ `name` を付けてアクセスしてみましょう。手順 14 で確認した API の URL の末尾に `?name=あなたの名前` を追加します。
+    - 例: `https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod/hello/?name=Taro`
+- ブラウザに `{"message": "hello Taro"}` のように、指定した名前が表示されることを確認してください。
 
 15. SAM CLI を使用して デプロイされた Lambda 関数のテストをリモートで実行します。下記は番号に `00` を付けた場合の例です。**`00` 部分はご自分の番号に置換えてください。**
 
@@ -289,10 +292,6 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
   
         
         {"statusCode": 200, "body": "{\"message\": \"hello world\"}"}
-
-  - 次に、ブラウザで API の URL にクエリパラメータ `name` を付けてアクセスしてみましょう。手順 14 で確認した API の URL の末尾に `?name=あなたの名前` を追加します。
-    - 例: `https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod/hello/?name=Taro`
-  - ブラウザに `{"message": "hello Taro"}` のように、指定した名前が表示されることを確認してください。
 
 
 16. (応用) リモートテストでもイベントを使用する
@@ -305,7 +304,7 @@ Value           https://in8gd5u2dk.execute-api.ap-northeast-1.amazonaws.com/Prod
   - これにより、デプロイ済みの関数に対して特定のイベントデータを送信し、動作を確認できます。
 
 
-17. sam-app00/hello_world/app.py を開き、Lambda 関数が return する greeting の文字列（例: `f"hello {name}"` の `hello` 部分）を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えてください。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認してください。また、前の手順と同じように`sam remote invoke` も実行してください。
+17. sam-app00/hello_world/app.py を開き、Lambda 関数が return する message の文字列（例: `f"hello {name}"` の `hello` 部分）を他の文字列に変更して保存します。**`00` 部分はご自分の番号に置換えてください。**　その後、下記のコマンドで再度デプロイして API でアクセスし、表示される文字列が変更されていることを確認してください。また、前の手順と同じように`sam remote invoke` も実行してください。
 
         sam build --use-container
 
