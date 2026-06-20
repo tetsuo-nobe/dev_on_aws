@@ -194,10 +194,10 @@ sam build  --use-container
 
   **ステップ 1: SAM CLI でサンプルイベントを生成する**
   
-  - SAM CLI には、各種 AWS サービスのサンプルイベントを生成する機能があります。API Gateway のイベントを生成してファイルに保存します。
+  - SAM CLI には、各種 AWS サービスのサンプルイベントを生成する機能があります。API Gateway の GET メソッドのイベントを生成してファイルに保存します。
 
   ```
-  sam local generate-event apigateway aws-proxy > events/event.json
+  sam local generate-event apigateway aws-proxy --method GET > events/event.json
   ```
 
   **ステップ 2: event.json を編集してクエリパラメータを設定する**
