@@ -126,6 +126,7 @@
         FunctionName: HelloWorldFunction00
         ```
         - 注意: インデントとして ` CodeUri: hello_world/` と同じ位置にしてください。
+        - 注意: 場所として ` CodeUri: hello_world/` の上に挿入してください。
         - 注意: ファイル編集後は、Ctrl + s キーまたは [File] メニューから [Save] を選択して編集内容を保存してください。
 
     - デプロイする Lambda 関数 (**`00` 部分はご自分の番号に置換えてください。**)
